@@ -186,6 +186,7 @@ byte num_labyrinthe = 0;
 
 byte i = 0;
 byte j = 0;
+byte choix = 0;
 
 void setup() {
 	pinMode(BP_HAUT, INPUT_PULLUP);
@@ -200,7 +201,42 @@ void setup() {
 		bouton_appuye = BP_Appuye();
 		delay(50);
 	}
+	
+	initialisation();
+}
 
+void loop() {
+	deplacement();
+	allume_led();
+	
+	
+	if ((pos_x == marqueur_S_X) && (pos_y == marqueur_S_Y)) {
+		reussite();
+	}
+}
+
+void initialisation() {
+	pos_x = 0;
+	pos_y = 0;
+	pos_xy = 0;
+	marqueur_A_X = 0;
+	marqueur_A_Y = 0;
+	pos_A = 0;
+	marqueur_B_X = 0;
+	marqueur_B_Y = 0;
+	pos_B = 0;
+	marqueur_S_X = 0;
+	marqueur_S_Y = 0;
+	pos_S = 0;
+	NB_erreur = 0;
+	bouton_appuye = 0;
+	kval = 0;
+	kval_old = 0;
+	num_labyrinthe = 0;
+	i = 0;
+	j = 0;
+	code[] = {1, 2, 3, 4, 5, 6, 7, 8};
+	
 	randomSeed(millis());
 
 	for (byte h = 0; h < 250; h++) { //mellange
@@ -217,16 +253,6 @@ void setup() {
 	allume_led();
 }
 
-void loop() {
-	deplacement();
-	allume_led();
-	
-	
-	if (((pos_x * 2) == marqueur_S_X) && ((pos_y * 2) == marqueur_S_Y)) {
-		reussite();
-	}
-}
-
 void choix_labyrinthe(byte val_labyrinthe) {
 	if (val_labyrinthe == 1) {
 		for(i = 0; i < 15; i++) {
@@ -235,6 +261,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
 				labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 2) {
 		for(i = 0; i < 15; i++) {
@@ -243,6 +271,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 3) {
 		for(i = 0; i < 15; i++) {
@@ -251,6 +281,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 4) {
 		for(i = 0; i < 15; i++) {
@@ -259,6 +291,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 5) {
 		for(i = 0; i < 15; i++) {
@@ -267,6 +301,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 6) {
 		for(i = 0; i < 15; i++) {
@@ -275,6 +311,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 7) {
 		for(i = 0; i < 15; i++) {
@@ -283,6 +321,8 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 	if (val_labyrinthe == 8) {
 		for(i = 0; i < 15; i++) {
@@ -291,26 +331,49 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
+		marqueur_A_X = 0;
+		marqueur_A_Y = 0;
 	}
 }
 
 void position_A_B_S() {
-	for(byte i = 0; i < 15; i++) {
-		for(byte j = 0; j < 15; j++) {
-			if (labyrinthe[i] [j] == 3) {
-				marqueur_A_X = (i/2);
-				marqueur_A_Y = (j/2);
-			}
-			if (labyrinthe[i] [j] == 4) {
-				marqueur_B_X = (i/2);
-				marqueur_B_Y = (j/2);
-			}
-			if (labyrinthe[i] [j] == 5) {
-				marqueur_S_X = (i/2);
-				marqueur_S_Y = (j/2);
-			}
-		}
+	choix = random(0, 8);
+	if (choix == 0) {
+		pos_x = 0;
+		pos_y = 0;
 	}
+	if (choix == 1) {
+		pos_x = 7;
+		pos_y = 0;
+	}
+	if (choix == 2) {
+		pos_x = 0;
+		pos_y = 7;
+	}
+	if (choix == 3) {
+		pos_x = 7;
+		pos_y = 7;
+	}
+	if (choix == 4) {
+		pos_x = 4;
+		pos_y = 0;
+	}
+	if (choix == 5) {
+		pos_x = 0;
+		pos_y = 4;
+	}
+	if (choix == 6) {
+		pos_x = 4;
+		pos_y = 7;
+	}
+	if (choix == 7) {
+		pos_x = 7;
+		pos_y = 4;
+	}
+
+	marqueur_S_X = (7 - pos_x);
+	marqueur_S_Y = (7 - pos_y);
+	
 	if (marqueur_A_Y == 0) pos_A = ( 0 + marqueur_A_X);
 	if (marqueur_A_Y == 1) pos_A = (15 - marqueur_A_X);
 	if (marqueur_A_Y == 2) pos_A = (16 + marqueur_A_X);
@@ -481,7 +544,8 @@ void erreur() {
 		}
 		FastLED.show();
 		allume_led();
-		while(1) {}
+		delay(500);
+		initialisation();
 	}
 }
 
@@ -522,9 +586,9 @@ void reussite() {
 		choix_labyrinthe(code[num_labyrinthe]);
 
 		position_A_B_S();
-		byte pos_x = 0;
-		byte pos_y = 0;
-		byte pos_xy = 0;
+		pos_x = 0;
+		pos_y = 0;
+		pos_xy = 0;
 
 		allume_led();
 	}
