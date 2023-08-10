@@ -261,8 +261,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
 				labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 1;
+		marqueur_A_Y = 2;
+		marqueur_B_X = 5;
+		marqueur_B_Y = 4;
 	}
 	if (val_labyrinthe == 2) {
 		for(i = 0; i < 15; i++) {
@@ -271,8 +273,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 1;
+		marqueur_A_Y = 2;
+		marqueur_B_X = 6;
+		marqueur_B_Y = 2;
 	}
 	if (val_labyrinthe == 3) {
 		for(i = 0; i < 15; i++) {
@@ -281,8 +285,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 1;
+		marqueur_A_Y = 2;
+		marqueur_B_X = 1;
+		marqueur_B_Y = 6;
 	}
 	if (val_labyrinthe == 4) {
 		for(i = 0; i < 15; i++) {
@@ -291,8 +297,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 5;
+		marqueur_A_Y = 4;
+		marqueur_B_X = 6;
+		marqueur_B_Y = 6;
 	}
 	if (val_labyrinthe == 5) {
 		for(i = 0; i < 15; i++) {
@@ -301,8 +309,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 6;
+		marqueur_A_Y = 2;
+		marqueur_B_X = 6;
+		marqueur_B_Y = 6;
 	}
 	if (val_labyrinthe == 6) {
 		for(i = 0; i < 15; i++) {
@@ -311,8 +321,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 1;
+		marqueur_A_Y = 6;
+		marqueur_B_X = 6;
+		marqueur_B_Y = 6;
 	}
 	if (val_labyrinthe == 7) {
 		for(i = 0; i < 15; i++) {
@@ -321,8 +333,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 3;
+		marqueur_A_Y = 4;
+		marqueur_B_X = 5;
+		marqueur_B_Y = 4;
 	}
 	if (val_labyrinthe == 8) {
 		for(i = 0; i < 15; i++) {
@@ -331,8 +345,10 @@ void choix_labyrinthe(byte val_labyrinthe) {
        labyrinthe[i] [j] = resultatBool;
 			}
 		}
-		marqueur_A_X = 0;
-		marqueur_A_Y = 0;
+		marqueur_A_X = 3;
+		marqueur_A_Y = 4;
+		marqueur_B_X = 6;
+		marqueur_B_Y = 2;
 	}
 }
 
