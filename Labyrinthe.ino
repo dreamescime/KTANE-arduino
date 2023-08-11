@@ -160,9 +160,27 @@ const int labyrinthe_8[15] = {
 0b0000000000001000   // ligne 14
 };
 
+const int labyrinthe_9[15] = {
+0b0000000000001000, // ligne 0
+0b0111101110101110, // ligne 1
+0b0000101000100010, // ligne 2
+0b0010111011111010, // ligne 3
+0b0010000010100000, // ligne 4
+0b0011111010101111, // ligne 5
+0b0000100010001000, // ligne 6
+0b0110101110111010, // ligne 7
+0b0000101000000010, // ligne 8
+0b0111111011111111, // ligne 9
+0b0000000010000010, // ligne 10
+0b0010111110111010, // ligne 11
+0b0010001000101000, // ligne 12
+0b0011101011101011, // ligne 13
+0b0000100010000000   // ligne 14
+};
+
 byte labyrinthe[15] [15] = {};
 
-byte code[] = {1, 2, 3, 4, 5, 6, 7, 8};
+byte code[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 byte pos_x = 0;
 byte pos_y = 0;
@@ -254,8 +272,8 @@ void initialisation() {
   randomSeed(millis());
 
   for (byte h = 0; h < 250; h++) { //mellange
-    i = random(0, 8); 
-    j = random(0, 8);
+    i = random(0, 9); 
+    j = random(0, 9);
     byte swap = code[i];
     code[i] = code[j];
     code[j] = swap;
@@ -365,6 +383,18 @@ void choix_labyrinthe(byte val_labyrinthe) {
     marqueur_A_Y = 3;
     marqueur_B_X = 2;
     marqueur_B_Y = 6;
+  }
+  if (val_labyrinthe == 9) {
+    for(i = 0; i < 15; i++) {
+      for(j = 0; j < 15; j++) {
+        bool resultatBool = labyrinthe_9[i] & (1 << (14 - j));
+       labyrinthe[i] [j] = resultatBool;
+      }
+    }
+    marqueur_A_X = 6;
+    marqueur_A_Y = 1;
+    marqueur_B_X = 4;
+    marqueur_B_Y = 3;
   }
   
   labyrinthe[2 * marqueur_A_Y] [2 * marqueur_A_X] = 2;
@@ -599,7 +629,7 @@ void reussite() {
   FastLED.show();
   num_labyrinthe ++;
 
-  if (num_labyrinthe < 8) {
+  if (num_labyrinthe < 9) {
     choix_labyrinthe(code[num_labyrinthe]);
 
     position_A_B_S();
