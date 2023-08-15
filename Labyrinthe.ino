@@ -649,7 +649,7 @@ void reussite() {
   else {
     while (1) {
       rainbow();
-      texte_a_afficher(" 3657 ");
+	    texte_a_afficher(" 3657 ");
     }
   }
 }
@@ -658,46 +658,49 @@ void rainbow() {
   int r = 0;
   int g = 0;
   int b = 0;
-  int val_rgb = 0;
-  
-  for(int i = 0; i < 1000; i++) {
-    val_rgb = 65536L * i / 1000;
-    if (val_rgb < 10923) {
-      r = 255;
-      g = map(val_rgb, 0, 10923, 0, 255);
-      b = 0;
-    }
-    else if (val_rgb < 21845) {
-      r = map(val_rgb, 10923, 21845, 255, 0);
-      g = 255;
-      b = 0;
-    }
-    else if (val_rgb < 32768) {
-      r = 0;
-      g = 255;
-      b = map(val_rgb, 21845, 32768, 0, 255);
-    }
-    else if (val_rgb < 43691) {
-      r = 0;
-      g = map(val_rgb, 32768, 43691, 255, 0);
-      b = 255;
-    }
-    else if (val_rgb < 54613) {
-      r = map(val_rgb, 43691, 54613, 0, 255);
-      g = 0;
-      b = 255;
-    }
-    else if (val_rgb < 43691) {
-      r = 255;
-      g = 0;
-      b = map(val_rgb, 32768, 43691, 255, 0);
-    }
-    for(int i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(r, g, b);
+  long val_rgb = 0;
+
+  for(int i = 0; i < 256; i++) {
+    for(int j = 0; j < NUM_LEDS_laby; j++) {
+      val_rgb = (65536 * i / 256 + 65536 * j / NUM_LEDS_laby);
+      if (val_rgb > 65536) {
+        val_rgb = val_rgb - 65536;
+      }
+      if (val_rgb < 10923) {
+        r = 255;
+        g = map(val_rgb, 0, 10923, 0, 255);
+        b = 0;
+      }
+      else if (val_rgb < 21845) {
+        r = map(val_rgb, 10923, 21845, 255, 0);
+        g = 255;
+       b = 0;
+      }
+      else if (val_rgb < 32768) {
+        r = 0;
+        g = 255;
+        b = map(val_rgb, 21845, 32768, 0, 255);
+      }
+      else if (val_rgb < 43691) {
+        r = 0;
+        g = map(val_rgb, 32768, 43691, 255, 0);
+        b = 255;
+      }
+      else if (val_rgb < 54613) {
+        r = map(val_rgb, 43691, 54613, 0, 255);
+        g = 0;
+        b = 255;
+      }
+      else if (val_rgb < 65536) {
+        r = 255;
+        g = 0;
+        b = map(val_rgb, 32768, 43691, 255, 0);
+      }
+      leds_laby[j].setRGB(r, g, b);
     }
     FastLED.show();
   Serial.println(val_rgb);
-    delay(100);
+    delay(30);
   }
 }
 
