@@ -649,6 +649,7 @@ void reussite() {
   else {
     while (1) {
       rainbow();
+      texte_a_afficher(" 3657 ");
     }
   }
 }
