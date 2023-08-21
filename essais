@@ -122,3 +122,38 @@ Arduino
 •	A5	SCL
 •	A6	
 •	A7	
+
+
+*******SIMON*******
+
+Obligatoire :
+Led RGB avec support
+
+
+4 bouton poussoir lumineux
+
+Information à recevoir :		- numéro de série [voyelle]
+
+Arduino 
+•	0	RX
+•	1	TX
+•	2	Led RGB
+•	3	bouton 1
+•	4	bouton 2
+•	5	bouton 3
+•	6	bouton 4
+•	7	lumiere 1
+•	8	lumiere 2
+•	9	lumiere 3
+•	10	lumiere 4
+•	11	
+•	12	
+•	13	
+•	A0	
+•	A1	
+•	A2	
+•	A3	
+•	A4	SDA
+•	A5	SCL
+•	A6	
+•	A7	
