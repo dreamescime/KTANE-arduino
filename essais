@@ -1,0 +1,124 @@
+*******Fils*******
+Obligatoire :
+Led RGB avec support
+
+
+6 entrée de fils droit
+6 entrée de fil gauche
+
+Information à recevoir :		- numéro de série impair
+
+Arduino 
+•	0	RX
+•	1	TX
+•	2	Led RGB
+•	3	
+•	4	
+•	5	
+•	6	
+•	7	
+•	8	
+•	9	
+•	10	
+•	11	
+•	12	
+•	13	
+•	A0	Fil 1
+•	A1	Fil 2
+•	A2	Fil 3
+•	A3	Fil 4
+•	A4	SDA
+•	A5	SCL
+•	A6	Fil 5
+•	A7	Fil 6
+
+
+Faire des fils :	- 3 rouge
+		- 3 blanc
+		- 3 bleu
+		- 3 jaune
+		- 3 noir
+
+
+*******Bouton*******
+Obligatoire :
+Led RGB avec support
+
+
+Anneau led RGB (Bleu, Blanc, Jaune, Rouge, /autre)
+Texte (	Annuler	Exploser	Maintenir		
+Bande RGB (bleu, blanc, jaune, /autre)
+
+Information à recevoir :		- plus de 2 piles
+				- Indicateur
+
+Arduino 
+•	0	RX
+•	1	TX
+•	2	Led RGB
+•	3	Bouton
+•	4	Anneau Led
+•	5	Bande LED
+•	6	
+•	7	
+•	8	
+•	9	
+•	10	
+•	11	
+•	12	
+•	13	
+•	A0	
+•	A1	
+•	A2	
+•	A3	
+•	A4	SDA
+•	A5	SCL
+•	A6	
+•	A7	
+
+
+
+*******Symboles*******
+Obligatoire :
+Led RGB avec support
+
+
+4 bouton poussoir
+Ecran SSD1306
+https://passionelectronique.fr/ecran-oled-i2c-arduino/
+
+Information à recevoir :		NAN
+
+
+Qbite	E2points	Cedansrond	6trais	Fourchette	6trais
+Abite	Qbite	Wvage	Pligne	Tirelangue	E2points
+Ytete	Cpoint	Infogramme	BdansT	BdansT	CroixLorraine
+Nalenvers	Infogramme	DoubleK	Htriangle	Cpoint	AdansE
+Htriangle	EtoileBlanche	3bite	DoubleK	Pligne	Fourchette
+Hbite	Hbite	Ytete	Pointdinterogation	3serpent	Nbite
+Cpoint	Pointdinterogation	EtoileBlanche	Tirelangue	EtoileNoir	Ohm
+
+
+Arduino 
+•	0	RX
+•	1	TX
+•	2	Led RGB
+•	3	bouton 1
+•	4	bouton 2
+•	5	bouton 3
+•	6	bouton 4
+•	7	
+•	8	
+•	9	
+•	10	
+•	11	
+•	12	
+•	13	
+•	A0	
+•	A1	
+•	A2	
+•	A3	
+•	A4	SDA
+•	A5	SCL
+•	A6	
+•	A7	
