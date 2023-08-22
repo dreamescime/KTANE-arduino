@@ -129,7 +129,7 @@ Led RGB avec support
 4 bouton poussoir lumineux
 
 **Information à recevoir** :
-* numéro de série [voyelle]
+* numéro de série [_voyelle_]
 
 **Arduino** 
 *	0	RX
@@ -162,13 +162,13 @@ Led RGB avec support
 **Obligatoire** :
 Led RGB avec support
 
-
 Afficheur 7 segments a cabler
 Afficheur 4 digit 7 segment (pas de IIC)
 Bloc de led en rampe
+4 boutons
 
 **Information à recevoir** :
-*NAN
+* NAN
 
 Arduino 
 *	0	RX
@@ -200,19 +200,19 @@ Arduino
 **Obligatoire** :
 Led RGB avec support
 
-
 Led pour morse
 Afficheur 4 digits, 7 segment
-
+potentiometre
+bouton
 
 **Information à recevoir** :
-*NAN
+* NAN
 
 **Arduino** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	
+*	3	bouton
 *	4	
 *	5	
 *	6	
@@ -223,7 +223,44 @@ Afficheur 4 digits, 7 segment
 *	11	
 *	12	
 *	13	
-*	A0	
+*	A0	potentiometre
+*	A1	
+*	A2	
+*	A3	
+*	A4	SDA
+*	A5	SCL
+*	A6	
+*	A7	
+
+# Fils compliqués
+
+**Obligatoire** :
+Led RGB avec support
+
+6 led etoiles
+6 led blanches
+6 prises hautes
+6 prises basses
+
+**Information à recevoir** :
+* NAN
+
+**Arduino** 
+*	0	RX
+*	1	TX
+*	2	Led RGB
+*	3	bouton
+*	4	
+*	5	
+*	6	
+*	7	
+*	8	
+*	9	
+*	10	
+*	11	
+*	12	
+*	13	
+*	A0	potentiometre
 *	A1	
 *	A2	
 *	A3	
