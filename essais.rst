@@ -12,28 +12,28 @@ Led RGB avec support
 Information à recevoir :		- numéro de série impair
 
 Arduino 
-*0	RX
-*1	TX
-*2	Led RGB
-*3	
-*4	
-*5	
-*6	
-*7	
-*8	
-*9	
-*10	
-*11	
-*12	
-*13	
-*A0	Fil 1
-*A1	Fil 2
-*A2	Fil 3
-*A3	Fil 4
-*A4	SDA
-*A5	SCL
-*A6	Fil 5
-*A7	Fil 6
+* 0	RX
+* 1	TX
+* 2	Led RGB
+* 3	
+* 4	
+* 5	
+* 6	
+* 7	
+* 8	
+* 9	
+* 10	
+* 11	
+* 12	
+* 13	
+* A0	Fil 1
+* A1	Fil 2
+* A2	Fil 3
+* A3	Fil 4
+* A4	SDA
+* A5	SCL
+* A6	Fil 5
+* A7	Fil 6
 
 
 Faire des fils :	- 3 rouge
