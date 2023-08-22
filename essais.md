@@ -85,8 +85,9 @@ Ecran SSD1306
 https://passionelectronique.fr/ecran-oled-i2c-arduino/
 
 **Information à recevoir** :
-*NAN
-|Possibilité 1 |Possibilité 2 |Possibilité 3 |Possibilité 4 |Possibilité 5 |Possibilité 6 |
+* NAN
+
+|Possibilité 1        |Possibilité 2       |Possibilité 3       |Possibilité 4       |Possibilité 5       |Possibilité 6       |
 | ------------------- |:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 |Qbite                |E2points            |Cedansrond          |6trais              |Fourchette          |6trais              |
 |Abite                |Qbite               |Wvage               |Pligne              |Tirelangue          |E2points            |
