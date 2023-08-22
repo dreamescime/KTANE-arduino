@@ -81,11 +81,8 @@
 * Led RGB avec support
 
 * 4 bouton poussoir
-* Ecran SSD1306
-* [https://passionelectronique.fr/ecran-oled-i2c-arduino/]
-
-* sinon ecran ST7920 - 128x64 px
-* [https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino]
+* [Ecran SSD1306](https://passionelectronique.fr/ecran-oled-i2c-arduino/)
+* [sinon ecran ST7920 - 128x64 px](https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino)
 
 **Information à recevoir** :
 * NAN
@@ -358,6 +355,4 @@ Arduino
 * [RJ-45](https://fr.aliexpress.com/item/1005003440343072.html?spm=a2g0o.productlist.main.57.5f5a326djM69zN&algo_pvid=6ce36167-250c-4633-beec-b0db1c915bbc&algo_exp_id=6ce36167-250c-4633-beec-b0db1c915bbc-28&pdp_npi=4%40dis%21EUR%218.89%212.22%21%21%219.47%21%21%40211b88ee16927161674517196e048a%2112000025804507239%21sea%21FR%210%21A&curPageLogUid=N1tBONFJKh4e)
 * [Serie](https://fr.aliexpress.com/item/4000047329316.html?spm=a2g0o.detail.1000014.4.797d6d9eOBjBeH&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=9a03efd2-6013-4c83-98a1-f2d37e822c91&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:9a03efd2-6013-4c83-98a1-f2d37e822c91,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%211.71%211.44%21%21%211.82%21%21%40211b61bb16927154830814419e390e%2110000000107114516%21rec%21FR%21%21A)
 * [Stéréo]
-
-
 * [usb A](https://fr.aliexpress.com/item/1005004627694781.html?spm=a2g0o.detail.1000014.19.4ba935077YEAB2&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=ee3f6211-8b18-4ab0-ab10-822e0e92f7ec&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:ee3f6211-8b18-4ab0-ab10-822e0e92f7ec,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%210.46%210.44%21%21%210.49%21%21%40211b446016927163931054313ef1a7%2112000029890523502%21rec%21FR%21%21A)
