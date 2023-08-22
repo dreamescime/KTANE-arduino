@@ -1,10 +1,10 @@
 # Fils simple
 
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-6 entrée de fils droit
-6 entrée de fil gauche
+* 6 entrée de fils droit
+* 6 entrée de fil gauche
 
 **Information à recevoir** :
 * numéro de série impair
@@ -42,11 +42,11 @@ Led RGB avec support
 
 # Bouton
 **Obligatoire**:
-Led RGB avec support
+* Led RGB avec support
 
-Anneau led RGB (_Bleu_, _Blanc_, _Jaune_, _Rouge_, /_autre_)
-Texte (	_Annuler_, _Exploser_, _Maintenir_
-Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
+* Anneau led RGB (_Bleu_, _Blanc_, _Jaune_, _Rouge_, /_autre_)
+* Texte (	_Annuler_, _Exploser_, _Maintenir_
+* Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
 
 **Information à recevoir** :
 * plus de 2 piles
@@ -83,6 +83,9 @@ Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
 * 4 bouton poussoir
 * Ecran SSD1306
 * [https://passionelectronique.fr/ecran-oled-i2c-arduino/]
+
+* sinon ecran ST7920 - 128x64 px
+* [https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino]
 
 **Information à recevoir** :
 * NAN
@@ -307,9 +310,17 @@ Arduino
 # Mot de passe
 
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-carré de 6x6 led RGB (ou 8x8)
+* Ecran SSD1306
+* [https://passionelectronique.fr/ecran-oled-i2c-arduino/]
+
+* sinon ecran ST7920 - 128x64 px
+* [https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino]
+
+* 5 boutons haut
+* 5 boutons bas
+* 1 bouton valider
 
 **Information à recevoir** :
 * NAN
@@ -318,20 +329,20 @@ carré de 6x6 led RGB (ou 8x8)
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	Bouton Haut
-*	4	Bouton Bas
-*	5	Bouton Droit
-*	6	Bouton Gauche
-*	7	
-*	8	
-*	9	
-*	10	
-*	11	
-*	12	
-*	13	
-*	A0	
-*	A1	
-*	A2	
+*	3	Bouton H1
+*	4	Bouton H2
+*	5	Bouton H3
+*	6	Bouton H4
+*	7	Bouton H5
+*	8	Bouton B1
+*	9	Bouton B2
+*	10	CS
+*	11	Data
+*	12	Bouton valide
+*	13	Clock
+*	A0	Bouton B3
+*	A1	Bouton B4
+*	A2	Bouton B5
 *	A3	
 *	A4	SDA
 *	A5	SCL
