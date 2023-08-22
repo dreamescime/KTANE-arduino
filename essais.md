@@ -33,7 +33,7 @@ Led RGB avec support
 * A6	Fil 5
 * A7	Fil 6
 
-##Faire des fils :
+## Faire des fils :
 * 3 rouge
 * 3 blanc
 * 3 bleu
