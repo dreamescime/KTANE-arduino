@@ -1,17 +1,21 @@
 Fils
---------
+=====
 
 Obligatoire
-============
+-----
 Led RGB avec support
 
 
 6 entrée de fils droit
 6 entrée de fil gauche
 
-Information à recevoir :		- numéro de série impair
+Information à recevoir :
+--------
+* numéro de série impair
+
 
 Arduino 
+-----
 * 0	RX
 * 1	TX
 * 2	Led RGB
