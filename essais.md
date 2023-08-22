@@ -86,14 +86,15 @@ https://passionelectronique.fr/ecran-oled-i2c-arduino/
 
 **Information à recevoir** :		NAN
 
-> Qbite      E2points            Cedansrond     6trais              Fourchette   6trais
-> Abite	    Qbite               Wvage          Pligne              Tirelangue   E2points
-> Ytete	    Cpoint              Infogramme     BdansT              BdansT       CroixLorraine
-> Nalenvers  Infogramme          DoubleK        Htriangle           Cpoint       AdansE
-> Htriangle  EtoileBlanche       3bite          DoubleK             Pligne       Fourchette
-> Hbite	    Hbite               Ytete          Pointdinterogation  3serpent     Nbite
-> Cpoint	    Pointdinterogation  EtoileBlanche  Tirelangue          EtoileNoir   Ohm
-
+```
+Qbite      E2points            Cedansrond     6trais              Fourchette   6trais
+Abite	    Qbite               Wvage          Pligne              Tirelangue   E2points
+Ytete	    Cpoint              Infogramme     BdansT              BdansT       CroixLorraine
+Nalenvers  Infogramme          DoubleK        Htriangle           Cpoint       AdansE
+Htriangle  EtoileBlanche       3bite          DoubleK             Pligne       Fourchette
+Hbite	    Hbite               Ytete          Pointdinterogation  3serpent     Nbite
+Cpoint	    Pointdinterogation  EtoileBlanche  Tirelangue          EtoileNoir   Ohm
+```
 
 Arduino 
 •	0	RX
