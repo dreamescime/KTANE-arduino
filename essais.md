@@ -1,6 +1,6 @@
 # Fils
 
-**Obligatoire**
+**Obligatoire** :
 Led RGB avec support
 
 6 entrée de fils droit
@@ -9,8 +9,7 @@ Led RGB avec support
 **Information à recevoir** :
 * numéro de série impair
 
-
-**Arduino** 
+**Arduino**
 * 0	RX
 * 1	TX
 * 2	Led RGB
@@ -34,23 +33,20 @@ Led RGB avec support
 * A6	Fil 5
 * A7	Fil 6
 
-
-Faire des fils :
+###Faire des fils :
 * 3 rouge
 * 3 blanc
 * 3 bleu
 * 3 jaune
 * 3 noir
 
-
 # Bouton
-Obligatoire :
+**Obligatoire**:
 Led RGB avec support
 
-
-Anneau led RGB (Bleu, Blanc, Jaune, Rouge, /autre)
-Texte (	Annuler	Exploser	Maintenir		
-Bande RGB (bleu, blanc, jaune, /autre)
+Anneau led RGB (_Bleu_, _Blanc_, _Jaune_, _Rouge_, /_autre_)
+Texte (	_Annuler_, _Exploser_, _Maintenir_
+Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
 
 Information à recevoir :		- plus de 2 piles
 				- Indicateur
