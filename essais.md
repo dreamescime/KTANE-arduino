@@ -48,45 +48,43 @@ Anneau led RGB (_Bleu_, _Blanc_, _Jaune_, _Rouge_, /_autre_)
 Texte (	_Annuler_, _Exploser_, _Maintenir_
 Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
 
-Information à recevoir :		- plus de 2 piles
-				- Indicateur
+**Information à recevoir** :
+* plus de 2 piles
+* Indicateur
 
-Arduino 
-•	0	RX
-•	1	TX
-•	2	Led RGB
-•	3	Bouton
-•	4	Anneau Led
-•	5	Bande LED
-•	6	
-•	7	
-•	8	
-•	9	
-•	10	
-•	11	
-•	12	
-•	13	
-•	A0	
-•	A1	
-•	A2	
-•	A3	
-•	A4	SDA
-•	A5	SCL
-•	A6	
-•	A7	
+**Arduino** 
+* 0	RX
+* 1	TX
+* 2	Led RGB
+* 3	Bouton
+* 4	Anneau Led
+* 5	Bande LED
+* 6	
+* 7	
+* 8	
+* 9	
+* 10	
+* 11	
+* 12	
+* 13	
+* A0	
+* A1	
+* A2	
+* A3	
+* A4	SDA
+* A5	SCL
+* A6	
+* A7	
 
-
-
-*******Symboles*******
-Obligatoire :
+# Symboles
+**Obligatoire** :
 Led RGB avec support
-
 
 4 bouton poussoir
 Ecran SSD1306
 https://passionelectronique.fr/ecran-oled-i2c-arduino/
 
-Information à recevoir :		NAN
+**Information à recevoir** :		NAN
 
 
 Qbite	E2points	Cedansrond	6trais	Fourchette	6trais
