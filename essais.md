@@ -1,21 +1,16 @@
-Fils
-=====
+#Fils
 
-Obligatoire
------
+**Obligatoire**
 Led RGB avec support
-
 
 6 entrée de fils droit
 6 entrée de fil gauche
 
-Information à recevoir :
---------
+**Information à recevoir** :
 * numéro de série impair
 
 
-Arduino 
------
+**Arduino** 
 * 0	RX
 * 1	TX
 * 2	Led RGB
@@ -40,14 +35,15 @@ Arduino
 * A7	Fil 6
 
 
-Faire des fils :	- 3 rouge
-		- 3 blanc
-		- 3 bleu
-		- 3 jaune
-		- 3 noir
+Faire des fils :
+* 3 rouge
+* 3 blanc
+* 3 bleu
+* 3 jaune
+* 3 noir
 
 
-*******Bouton*******
+#Bouton
 Obligatoire :
 Led RGB avec support
 
