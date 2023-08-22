@@ -78,11 +78,11 @@ Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
 
 # Symboles
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-4 bouton poussoir
-Ecran SSD1306
-https://passionelectronique.fr/ecran-oled-i2c-arduino/
+* 4 bouton poussoir
+* Ecran SSD1306
+* [https://passionelectronique.fr/ecran-oled-i2c-arduino/]
 
 **Information à recevoir** :
 * NAN
@@ -124,9 +124,9 @@ https://passionelectronique.fr/ecran-oled-i2c-arduino/
 # SIMON
 
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-4 bouton poussoir lumineux
+* 4 bouton poussoir lumineux
 
 **Information à recevoir** :
 * numéro de série [_voyelle_]
@@ -160,12 +160,12 @@ Led RGB avec support
 # Memoire
 
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-Afficheur 7 segments a cabler
-Afficheur 4 digit 7 segment (pas de IIC)
-Bloc de led en rampe
-4 boutons
+* Afficheur 7 segments a cabler
+* Afficheur 4 digit 7 segment (pas de IIC)
+* Bloc de led en rampe
+* 4 boutons
 
 **Information à recevoir** :
 * NAN
@@ -198,12 +198,12 @@ Arduino
 # MORSE
 
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-Led pour morse
-Afficheur 4 digits, 7 segment
-potentiometre
-bouton
+* Led pour morse
+* Afficheur 4 digits, 7 segment
+* potentiometre
+* 1 bouton
 
 **Information à recevoir** :
 * NAN
@@ -235,12 +235,12 @@ bouton
 # Fils compliqués
 
 **Obligatoire** :
-Led RGB avec support
+* Led RGB avec support
 
-6 led etoiles
-6 led blanches
-6 prises hautes
-6 prises basses
+* 6 led etoiles
+* 6 led blanches
+* 6 prises hautes
+* 6 prises basses
 
 **Information à recevoir** :
 * NAN
@@ -270,6 +270,41 @@ Led RGB avec support
 * A7	Fil 6
 
 # Labyrinthe
+
+**Obligatoire** :
+* Led RGB avec support
+
+* carré de 6x6 led RGB (ou 8x8)
+* 4 boutons
+
+**Information à recevoir** :
+* NAN
+
+**Arduino** 
+*	0	RX
+*	1	TX
+*	2	Led RGB
+*	3	Bouton Haut
+*	4	Bouton Bas
+*	5	Bouton Droit
+*	6	Bouton Gauche
+*	7	
+*	8	
+*	9	
+*	10	
+*	11	
+*	12	
+*	13	
+*	A0	
+*	A1	
+*	A2	
+*	A3	
+*	A4	SDA
+*	A5	SCL
+*	A6	
+*	A7	
+
+# Mot de passe
 
 **Obligatoire** :
 Led RGB avec support
