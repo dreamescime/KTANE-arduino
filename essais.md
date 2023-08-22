@@ -121,15 +121,15 @@ Cpoint     Pointdinterogation  EtoileBlanche  Tirelangue          EtoileNoir   O
 *	A6	
 *	A7	
 
-#SIMON
+# SIMON
 
 **Obligatoire** :
 Led RGB avec support
 
-
 4 bouton poussoir lumineux
 
-**Information à recevoir** :		- numéro de série [voyelle]
+**Information à recevoir** :
+* numéro de série [voyelle]
 
 **Arduino** 
 *	0	RX
@@ -157,7 +157,7 @@ Led RGB avec support
 
 
 
-#Memoire
+# Memoire
 
 **Obligatoire** :
 Led RGB avec support
@@ -195,7 +195,7 @@ Arduino
 *	A7	
 
 
-#MORSE
+# MORSE
 
 **Obligatoire** :
 Led RGB avec support
