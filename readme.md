@@ -163,7 +163,7 @@
 * Led RGB avec support
 
 * Afficheur 7 segments a cabler
-* Afficheur 4 digit 7 segment (pas de IIC)
+* [Afficheur 4 digit 7 segment (pas de IIC)](https://fr.aliexpress.com/item/1005004852285898.html?spm=a2g0o.cart.0.0.91ad378djBu8C8&mp=1&gatewayAdapt=glo2fra)
 * Bloc de led en rampe
 * 4 boutons
 
