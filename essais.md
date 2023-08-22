@@ -360,4 +360,4 @@ Arduino
 * [Stéréo]
 
 
-[usb A](https://fr.aliexpress.com/item/1005004627694781.html?spm=a2g0o.detail.1000014.19.4ba935077YEAB2&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=ee3f6211-8b18-4ab0-ab10-822e0e92f7ec&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:ee3f6211-8b18-4ab0-ab10-822e0e92f7ec,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%210.46%210.44%21%21%210.49%21%21%40211b446016927163931054313ef1a7%2112000029890523502%21rec%21FR%21%21A)
+* [usb A](https://fr.aliexpress.com/item/1005004627694781.html?spm=a2g0o.detail.1000014.19.4ba935077YEAB2&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=ee3f6211-8b18-4ab0-ab10-822e0e92f7ec&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:ee3f6211-8b18-4ab0-ab10-822e0e92f7ec,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%210.46%210.44%21%21%210.49%21%21%40211b446016927163931054313ef1a7%2112000029890523502%21rec%21FR%21%21A)
