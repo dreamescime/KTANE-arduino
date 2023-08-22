@@ -1,4 +1,4 @@
-# Fils
+# Fils simple
 
 **Obligatoire** :
 Led RGB avec support
@@ -249,8 +249,8 @@ Led RGB avec support
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	bouton
-*	4	
+*	3	Led blanche
+*	4	Led etoile
 *	5	
 *	6	
 *	7	
@@ -260,7 +260,41 @@ Led RGB avec support
 *	11	
 *	12	
 *	13	
-*	A0	potentiometre
+* A0	Fil 1
+* A1	Fil 2
+* A2	Fil 3
+* A3	Fil 4
+* A4	SDA
+* A5	SCL
+* A6	Fil 5
+* A7	Fil 6
+
+# Labyrinthe
+
+**Obligatoire** :
+Led RGB avec support
+
+carré de 6x6 led RGB (ou 8x8)
+
+**Information à recevoir** :
+* NAN
+
+**Arduino** 
+*	0	RX
+*	1	TX
+*	2	Led RGB
+*	3	Bouton Haut
+*	4	Bouton Bas
+*	5	Bouton Droit
+*	6	Bouton Gauche
+*	7	
+*	8	
+*	9	
+*	10	
+*	11	
+*	12	
+*	13	
+*	A0	
 *	A1	
 *	A2	
 *	A3	
