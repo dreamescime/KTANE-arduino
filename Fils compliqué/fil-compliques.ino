@@ -11,6 +11,7 @@ for (int i = 0; i = 4; i++) {
 
 
 for (int i = 0; i = 4; i++) {
+  byte fil_a_couper = 0;
   if (Led[i] == 0) {
     if (Bleu[i] == 0) ligne = 0;
     if (Bleu[i] == 1) ligne = 1;}
@@ -24,5 +25,23 @@ for (int i = 0; i = 4; i++) {
   if (Etoile[i] == 0) {
     if (Rouge[i] == 1) colonne = 2;
     if (Rouge[i] == 0) colonne = 3;}
-  Fil_a_couper[i] = test[ligne][colonne];
+  fil_a_couper = test[ligne][colonne];
+  if (fil_a_couper == 0) {
+    Fil[i] = 1;
+  }
+  if (fil_a_couper == 1) {
+    Fil[i] = 0;
+  }
+  if (fil_a_couper == 2) {
+    if (serial_number == 0) Fil[i] = 1;
+    else Fil[i] = 0;
+  }
+  if (fil_a_couper == 3) {
+    if (Port_parralele == 1) Fil[i] = 1;
+    else Fil[i] = 0;
+  }
+  if (fil_a_couper == 4) {
+    if (nombre_piles > 2) Fil[i] = 1;
+    else Fil[i] = 0;
+  }
 }
