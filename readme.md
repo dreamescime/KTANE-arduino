@@ -142,7 +142,6 @@
 
 **Information à recevoir** :
 * NAN
-
 * [liste des symboles](https://ktane.fandom.com/wiki/Keypad)
 
 
@@ -444,8 +443,8 @@
 
 * [DVI-D](https://fr.aliexpress.com/item/1005004038612277.html?spm=a2g0o.detail.1000014.11.5c4bLcgQLcgQKT&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.14452.335519.0&scm_id=1007.14452.335519.0&scm-url=1007.14452.335519.0&pvid=cbab142e-5072-432f-ab52-67e4e326a50b&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.14452.335519.0,pvid:cbab142e-5072-432f-ab52-67e4e326a50b,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%211.13%211.03%21%21%211.20%21%21%40211b440316927160483684695e2b20%2112000027821900854%21rec%21FR%21%21A&search_p4p_id=202308220754083956400115800657590558_2)
 * [Parallèle](https://fr.aliexpress.com/item/4000047329316.html?spm=a2g0o.detail.1000014.4.797d6d9eOBjBeH&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=9a03efd2-6013-4c83-98a1-f2d37e822c91&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:9a03efd2-6013-4c83-98a1-f2d37e822c91,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%211.71%211.44%21%21%211.82%21%21%40211b61bb16927154830814419e390e%2110000000107114516%21rec%21FR%21%21A)
-* [PS/2]
+* [PS/2](https://fr.aliexpress.com/item/1005005259319987.html?spm=a2g0o.productlist.main.29.48484904nVSggT&algo_pvid=0fd09721-e976-4b37-9c78-ac32062dc17b&aem_p4p_detail=202308230649275958797922476310003256750&algo_exp_id=0fd09721-e976-4b37-9c78-ac32062dc17b-14&pdp_npi=4%40dis%21EUR%211.35%211.35%21%21%211.43%21%21%4021038edf16927985678026519e3f17%2112000032393614659%21sea%21FR%210%21A&curPageLogUid=Bx5ayIH5g9hq&search_p4p_id=202308230649275958797922476310003256750_3)
 * [RJ-45](https://fr.aliexpress.com/item/1005003440343072.html?spm=a2g0o.productlist.main.57.5f5a326djM69zN&algo_pvid=6ce36167-250c-4633-beec-b0db1c915bbc&algo_exp_id=6ce36167-250c-4633-beec-b0db1c915bbc-28&pdp_npi=4%40dis%21EUR%218.89%212.22%21%21%219.47%21%21%40211b88ee16927161674517196e048a%2112000025804507239%21sea%21FR%210%21A&curPageLogUid=N1tBONFJKh4e)
 * [Serie](https://fr.aliexpress.com/item/4000047329316.html?spm=a2g0o.detail.1000014.4.797d6d9eOBjBeH&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=9a03efd2-6013-4c83-98a1-f2d37e822c91&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:9a03efd2-6013-4c83-98a1-f2d37e822c91,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%211.71%211.44%21%21%211.82%21%21%40211b61bb16927154830814419e390e%2110000000107114516%21rec%21FR%21%21A)
-* [Stéréo]
+* [Stéréo](https://fr.aliexpress.com/item/1005004497370750.html?spm=a2g0o.productlist.main.61.36cc5f496NeInI&algo_pvid=ca4c1a91-cd05-49af-ab91-b394a0351c59&algo_exp_id=ca4c1a91-cd05-49af-ab91-b394a0351c59-30&pdp_npi=4%40dis%21EUR%213.09%212.25%21%21%213.28%21%21%4021038edf16927986759581682e3f17%2112000029367206269%21sea%21FR%210%21A&curPageLogUid=VKayGXn6apSH)
 * [usb A](https://fr.aliexpress.com/item/1005004627694781.html?spm=a2g0o.detail.1000014.19.4ba935077YEAB2&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=ee3f6211-8b18-4ab0-ab10-822e0e92f7ec&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:ee3f6211-8b18-4ab0-ab10-822e0e92f7ec,tpp_buckets:668%232846%238114%231999&isseo=y&pdp_npi=4%40dis%21EUR%210.46%210.44%21%21%210.49%21%21%40211b446016927163931054313ef1a7%2112000029890523502%21rec%21FR%21%21A)
