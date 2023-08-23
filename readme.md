@@ -1,3 +1,57 @@
+# Module Maitre
+
+**Obligatoire** :
+* Ecran numéro de série
+* Ecran port / Boitier interchangeable de port
+* Ecran 4 digit 7 segments
+* 2 croix indicateur
+* Buzzer
+
+**Arduino ESP 32**
+// ESP8266 SS=15,SCL(SCK)=14,SDA(MOSI)=13,BUSY=16,RST=5,DC=4
+* 0	 /
+* 1	 TX
+* 2	 /
+* 3	 RX
+* 4	 RST eInk
+* 5	 DC  eInk
+* 6	 /
+* 7	 /
+* 8	 /
+* 9	 /
+* 10 /
+* 11 /
+* 12 /
+* 13 
+* 14 
+* 15 
+* 16 
+* 17 
+* 18 
+* 19 
+* 20 
+* 21 SDA
+* 22 SCL
+* 23 
+* 24 
+* 25 
+* 26 
+* 27 
+* 28 
+* 29 
+* 30 
+* 31 
+* 32 
+* 33 
+* 34 
+* 35 
+* 36 input
+* 37 input
+* 38 input
+* 39 input
+
+
+
 # Fils simple
 
 **Obligatoire** :
@@ -9,7 +63,7 @@
 **Information à recevoir** :
 * numéro de série impair
 
-**Arduino**
+**Arduino NANO**
 * 0	RX
 * 1	TX
 * 2	Led RGB
@@ -34,11 +88,13 @@
 * A7	Fil 6
 
 ***Faire des fils*** :
-* 3 rouge
-* 3 blanc
-* 3 bleu
-* 3 jaune
-* 3 noir
+
+* 3 noir  33    Ohm
+* 3 rouge 330   Ohm
+* 3 jaune 1000  Ohm
+* 3 bleu  3300  Ohm
+* 3 blanc 22000 Ohm
+
 
 # Bouton
 **Obligatoire**:
@@ -52,7 +108,7 @@
 * plus de 2 piles
 * Indicateur
 
-**Arduino** 
+**Arduino NANO** 
 * 0	RX
 * 1	TX
 * 2	Led RGB
@@ -97,7 +153,7 @@
 |Hbite                |Hbite               |Ytete               |Pointdinterogation  |3serpent            |Nbite               |
 |Cpoint               |Pointdinterogation  |EtoileBlanche       |Tirelangue          |EtoileNoir          |Ohm                 |
 
-**Arduino** 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
@@ -131,7 +187,7 @@
 **Information à recevoir** :
 * numéro de série [_voyelle_]
 
-**Arduino** 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
@@ -170,7 +226,7 @@
 **Information à recevoir** :
 * NAN
 
-Arduino 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
@@ -201,14 +257,14 @@ Arduino
 * Led RGB avec support
 
 * Led pour morse
-* Afficheur 4 digits, 7 segment
-* potentiometre
+* [Afficheur 4 digit 7 segment (pas de IIC)](https://fr.aliexpress.com/item/1005004852285898.html?spm=a2g0o.cart.0.0.91ad378djBu8C8&mp=1&gatewayAdapt=glo2fra)
+* [potentiometre](https://fr.aliexpress.com/item/4000288962865.html?spm=a2g0o.productlist.main.77.6d5914f4v5NPLG&algo_pvid=d71fb403-f40d-4cc7-a875-13c06d929c08&algo_exp_id=d71fb403-f40d-4cc7-a875-13c06d929c08-38&pdp_npi=4%40dis%21EUR%211.01%210.86%21%21%211.07%21%21%40211b88f116927819246263528e020d%2110000001196337664%21sea%21FR%210%21A&curPageLogUid=roWasiHeoYNX)
 * 1 bouton
 
 **Information à recevoir** :
 * NAN
 
-**Arduino** 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
@@ -245,7 +301,7 @@ Arduino
 **Information à recevoir** :
 * NAN
 
-**Arduino** 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
@@ -280,7 +336,7 @@ Arduino
 **Information à recevoir** :
 * NAN
 
-**Arduino** 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
@@ -322,7 +378,7 @@ Arduino
 **Information à recevoir** :
 * NAN
 
-**Arduino** 
+**Arduino NANO** 
 *	0	RX
 *	1	TX
 *	2	Led RGB
