@@ -324,7 +324,7 @@
 *	A6	
 *	A7	
 
-# 7 : Fils compliqués
+# 8 : Fils compliqués
 
 **Obligatoire** :
 * Led RGB avec support
@@ -363,7 +363,15 @@
 * A6	Fil 5
 * A7	Fil 6
 
-# 8 : Labyrinthe
+***Faire des fils*** :
+
+* 3 noir           33    Ohm
+* 3 rouge          330   Ohm
+* 3 bleu           1000  Ohm
+* 3 bleu et rouge  3300  Ohm
+* 3 blanc          22000 Ohm
+
+# 9 : Labyrinthe
 
 **Obligatoire** :
 * Led RGB avec support
@@ -397,7 +405,7 @@
 *	A6	
 *	A7	
 
-# 9 : Mot de passe
+# 10 : Mot de passe
 
 **Obligatoire** :
 * Led RGB avec support
