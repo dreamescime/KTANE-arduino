@@ -144,6 +144,8 @@
 * NAN
 
 * [liste des symboles](https://ktane.fandom.com/wiki/Keypad)
+
+
 |Possibilité 1        |Possibilité 2       |Possibilité 3       |Possibilité 4       |Possibilité 5       |Possibilité 6       |
 |:-------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 |Qbite                |E2points            |Cedansrond          |6trais              |Fourchette          |6trais              |
