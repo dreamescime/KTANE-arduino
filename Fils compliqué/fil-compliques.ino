@@ -10,4 +10,19 @@ for (int i = 0; i = 4; i++) {
 }
 
 
-if 
+for (int i = 0; i = 4; i++) {
+  if (Led[i] == 0) {
+    if (Bleu[i] == 0) ligne = 0;
+    if (Bleu[i] == 1) ligne = 1;}
+  if (Led[i] == 1) {
+    if (Bleu[i] == 1) ligne = 2;
+    if (Bleu[i] == 0) ligne = 3;}
+
+  if (Etoile[i] == 1) {
+    if (Rouge[i] == 0) colonne = 0;
+    if (Rouge[i] == 1) colonne = 1;}
+  if (Etoile[i] == 0) {
+    if (Rouge[i] == 1) colonne = 2;
+    if (Rouge[i] == 0) colonne = 3;}
+  Fil_a_couper[i] = test[ligne][colonne];
+}
