@@ -365,8 +365,7 @@
 
 **Obligatoire** :
 * Led RGB avec support
-
-* carré de 6x6 led RGB (ou 8x8)
+* carré de 6x6 led RGB ( [ou 8x8](https://fr.aliexpress.com/item/32600043941.html?spm=a2g0o.productlist.main.15.440e23faWMR9GR&algo_pvid=6831d2f4-16e0-404c-93f2-d6c32b484f47&algo_exp_id=6831d2f4-16e0-404c-93f2-d6c32b484f47-7&pdp_npi=4%40dis%21EUR%212.78%212.25%21%21%212.95%21%21%4021038edf16927990655851540e3f17%2159101695247%21sea%21FR%210%21A&curPageLogUid=oUTrEPINmbcc))
 * 4 boutons
 
 **Information à recevoir** :
@@ -400,10 +399,8 @@
 
 **Obligatoire** :
 * Led RGB avec support
-
 * [Ecran SSD1306](https://passionelectronique.fr/ecran-oled-i2c-arduino/)
 * [sinon ecran ST7920 - 128x64 px](https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino)
-
 * 5 boutons haut
 * 5 boutons bas
 * 1 bouton valider
