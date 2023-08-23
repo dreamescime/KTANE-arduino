@@ -335,7 +335,9 @@
 * 6 prises basses
 
 **Information à recevoir** :
-* NAN
+* numéro de série [_Pair_]
+* presence port parrallele
+* presence de + de 2 piles
 
 **Arduino NANO** 
 *	0	RX
