@@ -1,4 +1,4 @@
-# Module Maitre
+# 0 : Module Maitre
 
 **Obligatoire** :
 * Ecran numéro de série
@@ -52,7 +52,7 @@
 
 
 
-# Fils simple
+# 1 : Fils simple
 
 **Obligatoire** :
 * Led RGB avec support
@@ -96,7 +96,7 @@
 * 3 blanc 22000 Ohm
 
 
-# Bouton
+# 2 : Bouton
 **Obligatoire**:
 * Led RGB avec support
 
@@ -132,7 +132,7 @@
 * A6	
 * A7	
 
-# Symboles
+# 3 : Symboles
 **Obligatoire** :
 * Led RGB avec support
 
@@ -143,6 +143,7 @@
 **Information à recevoir** :
 * NAN
 
+* [liste des symboles](https://ktane.fandom.com/wiki/Keypad)
 |Possibilité 1        |Possibilité 2       |Possibilité 3       |Possibilité 4       |Possibilité 5       |Possibilité 6       |
 |:-------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 |Qbite                |E2points            |Cedansrond          |6trais              |Fourchette          |6trais              |
@@ -177,7 +178,7 @@
 *	A6	
 *	A7	
 
-# SIMON
+# 4 : SIMON
 
 **Obligatoire** :
 * Led RGB avec support
@@ -212,8 +213,42 @@
 *	A7	
 
 
+# 5 : Qui est le premier ?
+**Obligatoire** :
+* Led RGB avec support
 
-# Memoire
+* 6 bouton poussoir
+* [Ecran SSD1306](https://passionelectronique.fr/ecran-oled-i2c-arduino/)
+* [sinon ecran ST7920 - 128x64 px](https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino)
+
+**Information à recevoir** :
+* NAN
+
+**Arduino NANO** 
+*	0	RX
+*	1	TX
+*	2	Led RGB
+*	3	bouton 1
+*	4	bouton 2
+*	5	bouton 3
+*	6	bouton 4
+*	7	bouton 5
+*	8	bouton 6
+*	9	
+*	10	
+*	11	
+* 12	
+*	13	
+*	A0	
+*	A1	
+*	A2	
+*	A3	
+*	A4	SDA
+*	A5	SCL
+*	A6	
+*	A7	
+
+# 6 : Memoire
 
 **Obligatoire** :
 * Led RGB avec support
@@ -251,7 +286,7 @@
 *	A7	
 
 
-# MORSE
+# 7 : MORSE
 
 **Obligatoire** :
 * Led RGB avec support
@@ -288,7 +323,7 @@
 *	A6	
 *	A7	
 
-# Fils compliqués
+# 7 : Fils compliqués
 
 **Obligatoire** :
 * Led RGB avec support
@@ -325,7 +360,7 @@
 * A6	Fil 5
 * A7	Fil 6
 
-# Labyrinthe
+# 8 : Labyrinthe
 
 **Obligatoire** :
 * Led RGB avec support
@@ -360,7 +395,7 @@
 *	A6	
 *	A7	
 
-# Mot de passe
+# 9 : Mot de passe
 
 **Obligatoire** :
 * Led RGB avec support
