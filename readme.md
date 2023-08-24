@@ -13,8 +13,8 @@
 * 1	 TX
 * 2	 /
 * 3	 RX
-* 4	 RST eInk
-* 5	 DC  eInk
+* 4	 Busy eInk
+* 5	 CS   eInk
 * 6	 /
 * 7	 /
 * 8	 /
@@ -25,14 +25,14 @@
 * 13 
 * 14 
 * 15 
-* 16 
-* 17 
-* 18 
+* 16 RST eInk
+* 17 DC  eInk
+* 18 CLK eInk
 * 19 
 * 20 
 * 21 SDA
 * 22 SCL
-* 23 
+* 23 DIN eInk
 * 24 
 * 25 
 * 26 
