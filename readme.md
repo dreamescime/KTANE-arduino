@@ -8,8 +8,8 @@
 * Buzzer
 
 **Arduino ESP 32**
-// ESP8266 SS=15,SCL(SCK)=14,SDA(MOSI)=13,BUSY=16,RST=5,DC=4
-* 0	 /
+// ESP8266  BUSY -> 4, RST -> 16, DC -> 17, CS -> SS(5), CLK -> SCK(18), DIN -> MOSI(23)
+
 * 1	 TX
 * 2	 /
 * 3	 RX
