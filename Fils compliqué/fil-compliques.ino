@@ -8,7 +8,15 @@
 #define PIXEL_COUNT_Led_Blanc     6
 #define PIXEL_COUNT_Led_Etoile    6
 
-#define BP_Valide          5
+Adafruit_NeoPixel stripRGB(PIXEL_COUNT_Led_RGB, PIXEL_PIN_Led_RGB, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel stripLedBlanc(PIXEL_COUNT_Led_Blanc, PIXEL_PIN_Led_Blanc, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel stripLedEtoile(PIXEL_COUNT_Led_Etoile, PIXEL_PIN_Led_Etoile, NEO_GRB + NEO_KHZ800);
+
+// a passer en variable avec communication master
+byte serial_number = 1;
+byte Port_parralele = 1;
+byte nombre_piles = 4;
+// fin des variable master
 
 const byte borne[6] = {0, 1, 2, 3, 6, 7};
 byte Fil_present[6];
@@ -16,24 +24,28 @@ byte Bleu[6];
 byte Rouge[6];
 byte Led[6];
 byte Etoile[6];
-byte Nb_fil_a_couper = 0;
+int Nb_fil_a_couper = 0;
 byte tension = 0;
 byte tension_fil[6];
-byte fil[6];
+byte Fil[6];
+byte ligne = 0;
+byte colonne = 0;
 
-const byte test[4] [4] = {
-	{0, 0, 2, 0}
-	{1, 3, 2, 2}
-	{3, 1, 2, 3}
+const byte test[4][4] = {
+	{0, 0, 2, 0},
+	{1, 3, 2, 2},
+	{3, 1, 2, 3},
 	{4, 4, 4, 1}};
 
-
-
 void setup() {
-	serial_port.begin(9600);
 	Serial.begin(9600);
+	stripRGB.begin();
+	stripLedBlanc.begin();
+	stripLedEtoile.begin();
+	stripRGB.show();
+	stripLedBlanc.show();
+	stripLedEtoile.show();
 
-	// Detect wires:
 	pinMode(A0, INPUT);
 	pinMode(A1, INPUT);
 	pinMode(A2, INPUT);
@@ -41,8 +53,17 @@ void setup() {
 	pinMode(A6, INPUT);
 	pinMode(A7, INPUT);
 	
+	delay(10);
+	
 	couleur_Fil();
 	mise_en_place_1();
+	
+	for(int i = 0; i < 6; i++) {
+		if (Led[i] == 1) stripLedBlanc.setPixelColor(i, 255, 255, 255);
+		if (Etoile[i] == 1) stripLedEtoile.setPixelColor(i, 255, 255, 255);
+	}
+	stripLedBlanc.show();
+	stripLedEtoile.show();
 }
 
 void loop() {
@@ -68,7 +89,7 @@ void loop() {
 void couleur_Fil() {
 	for (int i = 0; i = 6; i++) {
 		tension = analogRead(borne[i]);
-		if(tension[i] < 10) { // pas de fil
+		if(tension < 10) { // pas de fil
 			Fil_present[i] = 0;
 			Bleu[i] = 0;
 			Rouge[i] = 0;
@@ -103,14 +124,14 @@ void couleur_Fil() {
 }
 
 int tension_sur_fil(int tension) {
-  if(tension < 10) {          return 0;
-  } else if(tension < 138) {  return 1;
-  } else if(tension < 384) {  return 2;
-  } else if(tension < 640) {  return 3;
-  } else if(tension < 896) {  return 4;
-  } else {                    return 5;
-  }
-  return 0;
+	if(tension < 10) {          return 0;
+	} else if(tension < 138) {  return 1;
+	} else if(tension < 384) {  return 2;
+	} else if(tension < 640) {  return 3;
+	} else if(tension < 896) {  return 4;
+	} else {                    return 5;
+	}
+	return 0;
 }
 
 void reussite() {
@@ -123,16 +144,26 @@ void reussite() {
 	}
 }
 
+void module_desarme() {
+	stripRGB.setPixelColor(0, 0, 255, 0);
+	stripRGB.show();
+	while(1){}
+}
+
 void erreur() {
-	
+	stripRGB.setPixelColor(0, 255, 0, 0);
+	stripRGB.show();
+	delay(1000);
+	stripRGB.setPixelColor(0, 0, 0, 0);
+	stripRGB.show();
 }
 
 void mise_en_place_1() {
-	while (Nb_Fil_a_couper < 1) {
+	while (Nb_fil_a_couper < 1) {
 		mise_en_place_2();
 		for (int i = 0; i = 6; i++) {
-			if ((Fil[i] == 1) {
-				Nb_Fil_a_couper ++;
+			if (Fil[i] == 1) {
+				Nb_fil_a_couper ++;
 			}
 		}
 	}
