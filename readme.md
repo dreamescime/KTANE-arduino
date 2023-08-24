@@ -367,8 +367,8 @@
 
 * 3 noir           33    Ohm
 * 3 rouge          330   Ohm
-* 3 bleu           1000  Ohm
-* 3 bleu et rouge  3300  Ohm
+* 3 bleu et rouge  1000  Ohm
+* 3 bleu           3300  Ohm
 * 3 blanc          22000 Ohm
 
 # 9 : Labyrinthe
