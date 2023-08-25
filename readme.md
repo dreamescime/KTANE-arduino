@@ -6,6 +6,7 @@
 * Ecran 4 digit 7 segments
 * 2 croix indicateur
 * Buzzer
+* [cable 4 pin pour bus IIC](https://fr.aliexpress.com/item/1005004615616698.html?spm=a2g0o.productlist.main.3.9b7c21edUMRUYj&algo_pvid=5ef0370c-a8b3-4c6a-9dbc-de84275f74f6&algo_exp_id=5ef0370c-a8b3-4c6a-9dbc-de84275f74f6-1&pdp_npi=4%40dis%21EUR%213.03%210.49%21%21%213.19%21%21%4021038edf16929548244715213e3f09%2112000029927782269%21sea%21FR%210%21A&curPageLogUid=cG7Znv5CVgY8)
 
 **Arduino ESP 32**
 // ESP8266  BUSY -> 4, RST -> 16, DC -> 17, CS -> SS(5), CLK -> SCK(18), DIN -> MOSI(23)
