@@ -2,6 +2,7 @@
 
 **Obligatoire** :
 * Ecran numéro de série
+* Batterie (1 a 4)
 * Ecran port / Boitier interchangeable de port
 * Ecran 4 digit 7 segments
 * 2 croix indicateur
