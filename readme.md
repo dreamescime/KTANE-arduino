@@ -216,7 +216,7 @@
 *	A7	
 
 
-# 5 : Qui est le premier ?
+# 5 : Jeux de mots ?
 **Obligatoire** :
 * Led RGB avec support
 
