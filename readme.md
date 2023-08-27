@@ -2,7 +2,8 @@
 
 **Obligatoire** :
 * Ecran numéro de série
-* Batterie (1 a 4)
+* [Support batterie](https://fr.aliexpress.com/item/4001116419537.html?spm=a2g0o.cart.0.0.91ad378dixEs7B&mp=1&gatewayAdapt=glo2fra)
+* [Batterie (1 a 4)](https://fr.aliexpress.com/item/4000589667648.html?spm=a2g0o.cart.0.0.91ad378dixEs7B&mp=1&gatewayAdapt=glo2fra)
 * Ecran port / Boitier interchangeable de port
 * Ecran 4 digit 7 segments
 * 2 croix indicateur
