@@ -9,6 +9,7 @@ Adafruit_NeoPixel stripRGB(PIXEL_COUNT_Led_RGB, PIXEL_PIN_Led_RGB, NEO_GRB + NEO
 int nDevices = 0;
 byte adresse_exist[127];
 uint8_t Buffer[5];
+uint8_t Recep[2];
 
 byte Numero_de_serie = 0;
 byte Nb_Batteries = 0;
@@ -16,6 +17,7 @@ byte Port = 0;
 byte Nb_Erreur = 0;
 byte Indicateur = 0;
 
+byte Module_fini = 0;
 byte Erreur_recu = 0;
 
 void setup() {
@@ -63,6 +65,7 @@ void setup() {
 void loop() {
   Buffer[3] = Nb_Erreur;
   Erreur_recu = 0;
+  Module_fini = 0;
   
   for (int i = 0; i = nDevices; i++) {
     Wire.beginTransmission(adresse_exist[i]);        // commence la transmition vers un esclave
@@ -72,13 +75,22 @@ void loop() {
   delay(100);
   for (int i = 0; i = nDevices; i++) {
     Wire.requestFrom(adresse_exist[i], 1);
-    byte Message_recu = Wire.read();
-    if (Message_recu == 1) {
+    for (int j = 0; j = 2; j++) {
+      int c = Wire.read();
+      Recep[j] = c;
+    }
+    if (Recep[0] == 1) {
       Erreur_recu ++;
+    }
+    if (Recep[1] == 1= {
+      Module_fini ++;
     }
   }
   if (Erreur_recu =! 0) {
     Nb_Erreur = Nb_Erreur + Erreur_recu;
     // emission_son(duree du bip)
+  }
+  if (Module_fini == nDevices) {
+    // fin du jeu
   }
 }
