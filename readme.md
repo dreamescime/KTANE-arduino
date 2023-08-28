@@ -53,7 +53,7 @@
 * 38 input
 * 39 input
 
-**Information IIC**
+**Information IIC Master>Slave**
 |valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |
 |:---------------:|:----------------:|:---------------:|:---------------:|:---------------:|:---------------:|
 |0                |                  |0                |                 |0                |SND              |
@@ -67,6 +67,13 @@
 |8                |                  |8                |                 |8                |TRN              |
 |9                |                  |9                |                 |9                |BOB              |
 |10               |                  |10               |                 |10               |FRK              |
+
+**Information IIC Slave>Master**
+|valeur           |Strke (erreur)    |
+|:---------------:|:----------------:|
+|0                |pas d'erreur      |
+|1                |une erreur        |
+
 
 # 1 : Fils simple
 
