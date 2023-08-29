@@ -186,12 +186,12 @@
 *	5	bouton 3
 *	6	bouton 4
 *	7	
-*	8	
+*	8	reset ecran
 *	9	
-*	10	
-*	11	
+*	10	CS ecran
+*	11	data ecran
 * 12	
-*	13	
+*	13	clock ecran
 *	A0	
 *	A1	
 *	A2	
