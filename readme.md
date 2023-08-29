@@ -160,8 +160,7 @@
 * Led RGB avec support
 
 * 4 bouton poussoir
-* [Ecran SSD1306](https://passionelectronique.fr/ecran-oled-i2c-arduino/)
-* [sinon ecran ST7920 - 128x64 px](https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino)
+* [ecran ST7920 - 128x64 px](https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino)
 
 **Information à recevoir** :
 * NAN
