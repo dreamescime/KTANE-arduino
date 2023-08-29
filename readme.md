@@ -18,40 +18,24 @@
 * 3	 RX
 * 4	 Busy eInk
 * 5	 CS   eInk
-* 6	 /
-* 7	 /
-* 8	 /
-* 9	 /
-* 10 /
-* 11 /
-* 12 /
-* 13 
+* 12 CLK
+* 13 DIO
 * 14 
 * 15 
 * 16 RST eInk
 * 17 DC  eInk
 * 18 CLK eInk
 * 19 
-* 20 
 * 21 SDA
 * 22 SCL
 * 23 DIN eInk
-* 24 
-* 25 
-* 26 
-* 27 
-* 28 
-* 29 
-* 30 
-* 31 
-* 32 
-* 33 
-* 34 
-* 35 
-* 36 input
-* 37 input
-* 38 input
-* 39 input
+* 25 Port
+* 26 Port
+* 27 Port
+* 32 Batterie 2
+* 33 Batterie 1
+* 34 Batterie 4
+* 35 Batterie 3
 
 **Information IIC Master>Slave**
 |valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |
