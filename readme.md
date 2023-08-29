@@ -169,13 +169,13 @@
 
 |Possibilité 1        |Possibilité 2       |Possibilité 3       |Possibilité 4       |Possibilité 5       |Possibilité 6       |
 |:-------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
-|Qbite                |E2points            |Cedansrond          |6trais              |Fourchette          |6trais              |
-|Abite                |Qbite               |Wvage               |Pligne              |Tirelangue          |E2points            |
-|Ytete                |Cgauche             |Infogramme          |BdansT              |BdansT              |CroixLorraine       |
-|Nalenvers            |Infogramme          |DoubleK             |Htriangle           |Cdroit              |AdansE              |
-|Htriangle            |EtoileBlanche       |3bite               |DoubleK             |Pligne              |Fourchette          |
-|Hbite                |Hbite               |Ytete               |Pointdinterogation  |3serpent            |Nbite               |
-|Cgauche              |Pointdinterogation  |EtoileBlanche       |Tirelangue          |EtoileNoir          |Ohm                 |
+|Balon                |E2points            |Copyright           |Six                 |Fourche             |Six                 |
+|AT                   |Balon               |Cul                 |Paragraph           |Smiley              |E2points            |
+|Ytete                |Cgauche             |Infogramme          |BT                  |BT                  |CroixLorraine       |
+|Nalenvers            |Infogramme          |DoubleK             |SquidGame           |Cdroit              |AdansE              |
+|SquidGame            |EtoileBlanche       |Troisfondu          |DoubleK             |Paragraph           |Fourche             |
+|Hvirgule             |Hvirgule            |Ytete               |Pointdinterogation  |3serpent            |Nchapeau            |
+|Cgauche              |Pointdinterogation  |EtoileBlanche       |Smiley              |EtoileNoir          |Omega               |
 
 **Arduino NANO** 
 *	0	RX
