@@ -167,15 +167,15 @@
 * [liste des symboles](https://ktane.fandom.com/wiki/Keypad)
 
 
-|Possibilité 1        |Possibilité 2       |Possibilité 3       |Possibilité 4       |Possibilité 5       |Possibilité 6       |
-|:-------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
-|Balon                |E2points            |Copyright           |Six                 |Fourche             |Six                 |
-|AT                   |Balon               |Cul                 |Paragraph           |Smiley              |E2points            |
-|Ytete                |Cgauche             |Infogramme          |BT                  |BT                  |CroixLorraine       |
-|Nalenvers            |Infogramme          |DoubleK             |SquidGame           |Cdroit              |AdansE              |
-|SquidGame            |EtoileBlanche       |Troisfondu          |DoubleK             |Paragraph           |Fourche             |
-|Hvirgule             |Hvirgule            |Ytete               |Pointdinterogation  |3serpent            |Nchapeau            |
-|Cgauche              |Pointdinterogation  |EtoileBlanche       |Smiley              |EtoileNoir          |Omega               |
+|Possibilité 1           |Possibilité 2          |Possibilité 3          |Possibilité 4          |Possibilité 5          |Possibilité 6          |
+|:----------------------:|:---------------------:|:---------------------:|:---------------------:|:---------------------:|:---------------------:|
+|125-Balon               |115-E2points           |101-Copyright          |110-Six                |122-Fourche            |110-Six                |
+|112-AT                  |125-Balon              |108-Cul                |119-Paragraph          |104-Smiley             |115-E2points           |
+|126-Ytete               |121-Cgauche            |123-Infogramme         |127-BT                 |127-BT                 |124-CroixLorraine      |
+|111-Nalenvers           |123-Infogramme         |105-DoubleK            |107-SquidGame          |120-Cdroit             |113-AdansE             |
+|107-SquidGame           |103-EtoileBlanche      |114-Troisfondu         |105-DoubleK            |119-Paragraph          |122-Fourche            |
+|109-Hvirgule            |109-Hvirgule           |126-Ytete              |118-Pointdinterogation |117-3serpent           |116-Nchapeau           |
+|121-Cgauche             |118-Pointdinterogation |103-EtoileBlanche      |104-Smiley             |102-EtoileNoir         |106-Omega              |
 
 **Arduino NANO** 
 *	0	RX
