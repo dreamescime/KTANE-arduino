@@ -69,10 +69,10 @@
 |10               |                  |10               |                 |10               |FRK              |
 
 **Information IIC Slave>Master**
-|valeur           |Strke (erreur)    |
-|:---------------:|:----------------:|
-|0                |pas d'erreur      |
-|1                |une erreur        |
+|valeur           |Strike (erreur)   |Etat du module    |
+|:---------------:|:----------------:|:----------------:|
+|0                |pas d'erreur      |module arme       |
+|1                |une erreur        |module fini       |
 
 
 # 1 : Fils simple
