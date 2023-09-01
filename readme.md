@@ -20,8 +20,8 @@
 * 5	 CS   eInk
 * 12 CLK
 * 13 DIO
-* 14 
-* 15 
+* 14 Led RGB
+* 15 Led Erreurs
 * 16 RST eInk
 * 17 DC  eInk
 * 18 CLK eInk
