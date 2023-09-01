@@ -1,8 +1,10 @@
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
 
-#define PIXEL_PIN_Led_RGB         2
+#define PIXEL_PIN_Led_RGB         14
 #define PIXEL_COUNT_Led_RGB       1
+#define PIXEL_PIN_Led_Erreur      15
+#define PIXEL_COUNT_Led_Erreur    2
 
 #define Pin_batterie_1        33
 #define Pin_batterie_2        32
@@ -12,6 +14,7 @@
 #define Pin_port_2        26
 
 Adafruit_NeoPixel stripRGB(PIXEL_COUNT_Led_RGB, PIXEL_PIN_Led_RGB, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel stripErreur(PIXEL_COUNT_Led_Erreur, PIXEL_PIN_Led_Erreur, NEO_GRB + NEO_KHZ800);
 
 int nDevices = 0;
 byte adresse_exist[127];
@@ -19,13 +22,13 @@ uint8_t Buffer[5];
 uint8_t Recep[2];
 
 char Numero_de_serie[6];
-char consonne[21] = "BCDFGHJKLMNPQRSTVWXZ";
-char voyelle[5] = "AEIU";
-char chiffre_pair[5] = "2468";
-char chiffre_impair[6] = "13579";
+char consonne[20] = "BCDFGHJKLMNPQRSTVWXZ";
+char voyelle[4] = "AEIU";
+char chiffre_pair[4] = "2468";
+char chiffre_impair[5] = "13579";
 byte variable = 0;
-String txt_Indicateur = "SND";
-String txt_Port = "HDMI";
+string txt_Indicateur = "SND";
+string txt_Port = "HDMI";
 
 byte Num_de_serie = 0;
 byte Nb_Batteries = 0;
@@ -45,7 +48,9 @@ byte Erreur_recu = 0;
 void setup() {
   Wire.begin();
   stripRGB.begin();
+  stripErreur.begin();
   stripRGB.show();
+  stripErreur.show();
 
   pinMode(Pin_batterie_1, INPUT);
   pinMode(Pin_batterie_2, INPUT);
@@ -212,7 +217,7 @@ void loop() {
   }
   delay(100);
   for (int i = 0; i = nDevices; i++) {
-    Wire.requestFrom(adresse_exist[i], 2);
+    Wire.requestFrom(adresse_exist[i], 1);
     for (int j = 0; j = 2; j++) {
       int c = Wire.read();
       Recep[j] = c;
@@ -220,13 +225,15 @@ void loop() {
     if (Recep[0] == 1) {
       Erreur_recu ++;
     }
-    if (Recep[1] == 1) {
+    if (Recep[1] == 1= {
       Module_fini ++;
     }
   }
   if (Erreur_recu =! 0) {
     Nb_Erreur = Nb_Erreur + Erreur_recu;
     // emission_son(duree du bip)
+	for (int i = 0; i = Nb_Erreur; i++) stripErreur.setPixelColor(i, 0, 255, 0);
+	stripErreur.show();
   }
   if (Module_fini == nDevices) {
     // fin du jeu
