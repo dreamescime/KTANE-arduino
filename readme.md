@@ -29,9 +29,9 @@
 * 21 SDA
 * 22 SCL
 * 23 DIN eInk
-* 25 Port
-* 26 Port
-* 27 Port
+* 25 Port 1
+* 26 Port 2
+* 27 
 * 32 Batterie 2
 * 33 Batterie 1
 * 34 Batterie 4
@@ -57,6 +57,7 @@
 |:---------------:|:----------------:|:----------------:|
 |0                |pas d'erreur      |module arme       |
 |1                |une erreur        |module fini       |
+
 
 
 # 1 : Fils simple
