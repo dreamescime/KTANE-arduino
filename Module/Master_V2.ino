@@ -19,13 +19,13 @@ uint8_t Buffer[5];
 uint8_t Recep[2];
 
 char Numero_de_serie[6];
-char consonne[20] = "BCDFGHJKLMNPQRSTVWXZ";
-char voyelle[4] = "AEIU";
-char chiffre_pair[4] = "2468";
-char chiffre_impair[5] = "13579";
+char consonne[21] = "BCDFGHJKLMNPQRSTVWXZ";
+char voyelle[5] = "AEIU";
+char chiffre_pair[5] = "2468";
+char chiffre_impair[6] = "13579";
 byte variable = 0;
-string txt_Indicateur = "SND";
-string txt_Port = "HDMI";
+String txt_Indicateur = "SND";
+String txt_Port = "HDMI";
 
 byte Num_de_serie = 0;
 byte Nb_Batteries = 0;
@@ -212,7 +212,7 @@ void loop() {
   }
   delay(100);
   for (int i = 0; i = nDevices; i++) {
-    Wire.requestFrom(adresse_exist[i], 1);
+    Wire.requestFrom(adresse_exist[i], 2);
     for (int j = 0; j = 2; j++) {
       int c = Wire.read();
       Recep[j] = c;
@@ -220,7 +220,7 @@ void loop() {
     if (Recep[0] == 1) {
       Erreur_recu ++;
     }
-    if (Recep[1] == 1= {
+    if (Recep[1] == 1) {
       Module_fini ++;
     }
   }
