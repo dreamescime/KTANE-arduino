@@ -43,8 +43,8 @@
 |0                |                  |0                |                 |0                |SND              |
 |1                |pair et voyelle   |1                |DVID             |1                |CLR              |
 |2                |impair et voyelle |2                |Parallele        |2                |CAR              |
-|3                |pair et consonne  |3                |PS2              |3                |IND              |
-|4                |impair et consonne|4                |RJ45             |4                |FRQ              |
+|3                |pair et /voyelle  |3                |PS2              |3                |IND              |
+|4                |impair et /voyelle|4                |RJ45             |4                |FRQ              |
 |5                |                  |5                |Serie            |5                |SIG              |
 |6                |                  |6                |Stereo RCA       |6                |NSA              |
 |7                |                  |7                |USB              |7                |MSA              |
