@@ -40,17 +40,17 @@
 **Information IIC Master>Slave**
 |valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |
 |:---------------:|:----------------:|:---------------:|:---------------:|:---------------:|:---------------:|
-|0                |                  |0                |                 |0                |SND              |
-|1                |pair et voyelle   |1                |DVID             |1                |CLR              |
-|2                |impair et voyelle |2                |Parallele        |2                |CAR              |
-|3                |pair et /voyelle  |3                |PS2              |3                |IND              |
-|4                |impair et /voyelle|4                |RJ45             |4                |FRQ              |
-|5                |                  |5                |Serie            |5                |SIG              |
-|6                |                  |6                |Stereo RCA       |6                |NSA              |
-|7                |                  |7                |USB              |7                |MSA              |
-|8                |                  |8                |                 |8                |TRN              |
-|9                |                  |9                |                 |9                |BOB              |
-|10               |                  |10               |                 |10               |FRK              |
+|0                |                  |0                |                 |0                |SND 0 1          |
+|1                |pair et voyelle   |1                |DVID             |1                |CLR 0 2          |
+|2                |impair et voyelle |2                |Parallele        |2                |CAR 0 3          |
+|3                |pair et /voyelle  |3                |PS2              |3                |IND 1 1          |
+|4                |impair et /voyelle|4                |RJ45             |4                |FRQ 1 2          |
+|5                |                  |5                |Serie            |5                |SIG 1 3          |
+|6                |                  |6                |Stereo RCA       |6                |NSA 2 1          |
+|7                |                  |7                |USB              |7                |MSA 2 2          |
+|8                |                  |8                |                 |8                |TRN 2 3          |
+|9                |                  |9                |                 |9                |BOB 3 1          |
+|10               |                  |10               |                 |10               |FRK 3 2          |
 
 **Information IIC Slave>Master**
 |valeur           |Strike (erreur)   |Etat du module    |
