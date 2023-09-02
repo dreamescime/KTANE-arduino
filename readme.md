@@ -21,7 +21,7 @@
 * 12 CLK
 * 13 DIO
 * 14 Led RGB
-* 15 Led Erreurs
+* 15 
 * 16 RST eInk
 * 17 DC  eInk
 * 18 CLK eInk
@@ -31,7 +31,7 @@
 * 23 DIN eInk
 * 25 Port 1
 * 26 Port 2
-* 27 
+* 27 Led Erreurs
 * 32 Batterie 2
 * 33 Batterie 1
 * 34 Batterie 4
