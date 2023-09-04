@@ -151,7 +151,6 @@
 * NAN
 * [liste des symboles](https://ktane.fandom.com/wiki/Keypad)
 
-
 |Possibilité 1           |Possibilité 2          |Possibilité 3          |Possibilité 4          |Possibilité 5          |Possibilité 6          |
 |:----------------------:|:---------------------:|:---------------------:|:---------------------:|:---------------------:|:---------------------:|
 |125-Balon               |115-E2points           |101-Copyright          |110-Six                |122-Fourche            |110-Six                |
@@ -185,6 +184,8 @@
 *	A5	SCL
 *	A6	
 *	A7	
+
+[Convertisseur image arduino]([https://arduino-tutorials.net/tutorial/control-graphic-lcd-display-spi-st7920-128x64-with-arduino](https://javl.github.io/image2cpp/?pseSrc=pgEcranOledArduino))
 
 # 4 : SIMON
 
