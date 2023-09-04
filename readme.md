@@ -109,7 +109,7 @@
 * Led RGB avec support
 
 * Anneau led RGB (_Bleu_, _Blanc_, _Jaune_, _Rouge_, /_autre_)
-* Texte (	_Annuler_, _Exploser_, _Maintenir_
+* [Texte (	_Annuler_, _Exploser_, _Maintenir_](https://fr.aliexpress.com/item/1005005034354794.html?spm=a2g0o.productlist.main.1.3e0c4d74qFsGpg&algo_pvid=e9a08e5d-dd14-4c41-8e84-e41d38caf7a9&algo_exp_id=e9a08e5d-dd14-4c41-8e84-e41d38caf7a9-0&pdp_npi=4%40dis%21EUR%213.02%212.12%21%21%213.18%21%21%40211b88ec16938577556432127e1a2d%2112000031402247718%21sea%21FR%21776324173%21&curPageLogUid=pxyBuX3BettJ)
 * Bande RGB (_bleu_, _blanc_, _jaune_, /_autre_)
 
 **Information à recevoir** :
