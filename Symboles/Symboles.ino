@@ -353,10 +353,10 @@ void initialisation() {
   Serial.print(ordre_symbole[2]); Serial.print("    ");
   Serial.print(ordre_symbole[3]); Serial.println("");
 
-  dessine(symbole[ligne][colonne[0]],  1, 20);
-  dessine(symbole[ligne][colonne[1]], 33, 20);
-  dessine(symbole[ligne][colonne[2]], 65, 20);
-  dessine(symbole[ligne][colonne[3]], 97, 20);
+  dessine(symbole[ligne][colonne[0]],  0, 20);
+  dessine(symbole[ligne][colonne[1]], 32, 20);
+  dessine(symbole[ligne][colonne[2]], 64, 20);
+  dessine(symbole[ligne][colonne[3]], 96, 20);
   u8g2.sendBuffer();
 }
 
