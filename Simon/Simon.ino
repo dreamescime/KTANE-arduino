@@ -29,12 +29,13 @@ bool flag = 0;
 byte strike = 0;
 byte voyelle = 0;
 
+bool reussite = false;
 bool module_fini = 0;
 
 byte kval = 0;
 byte kval_old = 0;
 
-mapping[2][3][4] = {
+byte mapping[2][3][4] = {
 	{//pas de voyelles
 		{BLEU, ROUGE, VERT, JAUNE},
 		{ROUGE, VERT, JAUNE, BLEU},
@@ -45,7 +46,7 @@ mapping[2][3][4] = {
 		{JAUNE, ROUGE, BLEU, VERT},
 		{VERT, BLEU, JAUNE, ROUGE}
 	}
-}
+};
 
 void setup() {
 	Wire.begin(Adresse_esclave);
@@ -53,13 +54,13 @@ void setup() {
 	stripRGB.show();
 	Serial.begin(9600);
 	Serial.println("\n Module SIMON KTANE");
-	for (int i = 0, i < 4, i++) {
+	for (int i = 0; i < 4; i++) {
 		pinMode(bouton_pin[i], INPUT_PULLUP);
 		pinMode(led_pin[i], OUTPUT);
 		digitalWrite(led_pin[i], LOW);
 	}
 	NB_lvl = random(3, Maximum_LVL + 1);
-	for (int i = 0, i < NB_lvl, i++)
+	for (int i = 0; i < NB_lvl; i++)
 		stage_couleur[i] = random(0, 4);
 }
 
@@ -135,11 +136,11 @@ void Simon() {
 		while (flag == 0){
 			affiche_lumiere();
 			bouton_appuye = BP_Appuye();
-			if (bouton_appuye == mapping[voyelle][strike][stage_couleur[i]){
+			if (bouton_appuye == mapping[voyelle][strike][stage_couleur[i]]) {
 				flag = 1;
 				delay(300);
 			}
-			if (bouton_appuye != mapping[voyelle][strike][stage_couleur[i]  &&  bouton_appuye != 0){
+			if (bouton_appuye != mapping[voyelle][strike][stage_couleur[i]]  &&  bouton_appuye != 0) {
 				delay(300);
 				return;
 			}
