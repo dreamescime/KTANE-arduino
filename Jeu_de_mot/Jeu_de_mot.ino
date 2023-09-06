@@ -132,7 +132,7 @@ void intialisation() {
 	byte bouton_a_appuye = 0;
 	for (i = 0; i < 14; i++) {
 		for (j = 0; j < 6; j++) {
-			if ((mot[i] == liste_mots[mot[regard]][j]) && (bouton_a_appuye == 0)) bouton_a_appuye = j+1;
+			if ((mot[j] == liste_mots[mot[regard]][i]) && (bouton_a_appuye == 0)) bouton_a_appuye = j+1;
 		}
 	}
 }
