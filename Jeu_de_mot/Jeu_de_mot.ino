@@ -105,15 +105,15 @@ void intialisation() {
 	mot_master = random(1, 29);
 	if (mot_master == 21)
 		regard = 0;
-	if (mot_master == 2 || mot_master == 4 || mot_master == 27)
+	if (mot_master ==  2 || mot_master ==  4 || mot_master == 27)
 		regard = 1;
-	if (mot_master == 1 || mot_master == 6 || mot_master == 10 || mot_master == 25)
+	if (mot_master ==  1 || mot_master ==  6 || mot_master == 10 || mot_master == 25)
 		regard = 2;
-	if (mot_master == 8 || mot_master == 12 || mot_master == 13 || mot_master == 17 || mot_master == 19 || mot_master == 20 || mot_master == 24)
+	if (mot_master ==  8 || mot_master == 12 || mot_master == 13 || mot_master == 17 || mot_master == 19 || mot_master == 20 || mot_master == 24)
 		regard = 3;
-	if (mot_master == 7 || mot_master == 14 || mot_master == 15 || mot_master == 23)
+	if (mot_master ==  7 || mot_master == 14 || mot_master == 15 || mot_master == 23)
 		regard = 4;
-	if (mot_master == 3 || mot_master == 5 || mot_master == 9 || mot_master == 11 || mot_master == 16 || mot_master == 18 || mot_master == 22 || mot_master == 26 || mot_master == 28)
+	if (mot_master ==  3 || mot_master ==  5 || mot_master ==  9 || mot_master == 11 || mot_master == 16 || mot_master == 18 || mot_master == 22 || mot_master == 26 || mot_master == 28)
 		regard = 5;
 	
 	mot[0] = random(0, 28);
