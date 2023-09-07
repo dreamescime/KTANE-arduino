@@ -1,4 +1,3 @@
-//"OUI, PREMIER, VERRE, OK, MOTS, RIEN, '', VIDE, NON, MOT, MAUX, BOUGE, ROUGE, AU, EAU, ATTENDS, TES, T'ES, TON, TONS, THON, TU ES, HAUT, VERS, VERT, C'EST, C, VER"
 const byte liste_mots[28][14] = {
 { 6, 12,  7, 11,  9, 14, 10,  4,  1,  3,  2,  8,  5, 13},
 { 9, 12,  6, 11,  3, 10,  5,  8, 13,  1,  4,  7, 14,  2},
@@ -30,12 +29,6 @@ const byte liste_mots[28][14] = {
 {18, 25, 20, 19, 26, 24, 22, 23, 21, 15, 28, 27, 16, 17}
 }
 
-u8g2.setFont(u8g2_font_ncenB14_tf);
-u8g2.setFontDirection(0);
-u8g2.drawStr(15, 20, "Abc");
-u8g2.setFontDirection(1);
-u8g2.drawStr(15, 20, "Abc");
-
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
 #include <U8g2lib.h>
@@ -66,6 +59,9 @@ byte mot_master = 0;
 byte mot[6];
 byte regard = 0;
 byte bouton_a_appuye = 0;
+
+String txt_master = "";
+string txt[6];
 
 
 
@@ -135,4 +131,83 @@ void intialisation() {
 			if ((mot[j] == liste_mots[mot[regard]][i]) && (bouton_a_appuye == 0)) bouton_a_appuye = j+1;
 		}
 	}
+
+	if (mot_master ==  1) txt_master = "OUI";
+	if (mot_master ==  2) txt_master = "PREMIER";
+	if (mot_master ==  3) txt_master = "VERRE";
+	if (mot_master ==  4) txt_master = "OK";
+	if (mot_master ==  5) txt_master = "MOTS";
+	if (mot_master ==  6) txt_master = "RIEN";
+	if (mot_master ==  7) txt_master = "";
+	if (mot_master ==  8) txt_master = "VIDE";
+	if (mot_master ==  9) txt_master = "NON";
+	if (mot_master == 10) txt_master = "MOT";
+	if (mot_master == 11) txt_master = "MAUX";
+	if (mot_master == 12) txt_master = "BOUGE";
+	if (mot_master == 13) txt_master = "ROUGE";
+	if (mot_master == 14) txt_master = "AU";
+	if (mot_master == 15) txt_master = "EAU";
+	if (mot_master == 16) txt_master = "ATTENDS";
+	if (mot_master == 17) txt_master = "TES";
+	if (mot_master == 18) txt_master = "T'ES";
+	if (mot_master == 19) txt_master = "TON";
+	if (mot_master == 20) txt_master = "TONS";
+	if (mot_master == 21) txt_master = "THON";
+	if (mot_master == 22) txt_master = "TU ES";
+	if (mot_master == 23) txt_master = "HAUT";
+	if (mot_master == 24) txt_master = "VERS";
+	if (mot_master == 25) txt_master = "VERT";
+	if (mot_master == 26) txt_master = "C'EST";
+	if (mot_master == 27) txt_master = "C";
+	if (mot_master == 28) txt_master = "VER";
+
+	for (i = 0; i < 6; i++) {
+			if (mot[i] ==  1) txt[i] = "PRÊT";
+			if (mot[i] ==  2) txt[i] = "PREMIER";
+			if (mot[i] ==  3) txt[i] = "NON";
+			if (mot[i] ==  4) txt[i] = "VIDE";
+			if (mot[i] ==  5) txt[i] = "RIEN";
+			if (mot[i] ==  6) txt[i] = "OUI";
+			if (mot[i] ==  7) txt[i] = "EUX";
+			if (mot[i] ==  8) txt[i] = "EUHHH";
+			if (mot[i] ==  9) txt[i] = "GAUCHE";
+			if (mot[i] == 10) txt[i] = "DROITE";
+			if (mot[i] == 11) txt[i] = "MILIEU";
+			if (mot[i] == 12) txt[i] = "E";
+			if (mot[i] == 13) txt[i] = "ATTENDS";
+			if (mot[i] == 14) txt[i] = "APPUIE";
+			if (mot[i] == 15) txt[i] = "TOI";
+			if (mot[i] == 16) txt[i] = "THON";
+			if (mot[i] == 17) txt[i] = "TON";
+			if (mot[i] == 18) txt[i] = "TONS";
+			if (mot[i] == 19) txt[i] = "T'ES";
+			if (mot[i] == 20) txt[i] = "TES";
+			if (mot[i] == 21) txt[i] = "AVANT";
+			if (mot[i] == 22) txt[i] = "QUOI";
+			if (mot[i] == 23) txt[i] = "QUOI ?";
+			if (mot[i] == 24) txt[i] = "FAIT";
+			if (mot[i] == 25) txt[i] = "SUIVANT";
+			if (mot[i] == 26) txt[i] = "MAINTIENS";
+			if (mot[i] == 27) txt[i] = "OK";
+			if (mot[i] == 28) txt[i] = "COMME";
+	}
+
+	affiche();
+}
+
+
+u8g2.setFontDirection(1);
+u8g2.drawStr(15, 20, "Abc");
+//"OUI, PREMIER, VERRE, OK, MOTS, RIEN, '', VIDE, NON, MOT, MAUX, BOUGE, ROUGE, AU, EAU, ATTENDS, TES, T'ES, TON, TONS, THON, TU ES, HAUT, VERS, VERT, C'EST, C, VER"
+
+void affiche() {
+	u8g2.setFont(u8g2_font_ncenB14_tf);
+	u8g2.setFontDirection(1);
+	u8g2.drawStr(15, 20, txt_master);
+	u8g2.drawStr(15, 20, txt[0]);
+	u8g2.drawStr(15, 20, txt[1]);
+	u8g2.drawStr(15, 20, txt[2]);
+	u8g2.drawStr(15, 20, txt[3]);
+	u8g2.drawStr(15, 20, txt[4]);
+	u8g2.drawStr(15, 20, txt[5]);
 }
