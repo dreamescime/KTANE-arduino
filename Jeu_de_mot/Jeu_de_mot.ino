@@ -71,6 +71,7 @@ void setup() {
 	Wire.onReceive(receiveEvent); // register event
 	Serial.begin(9600);
 	Serial.println("\n Module Jeu de Mot KTANE");
+	u8g2.begin();
 }
 
 void loop() {
@@ -210,4 +211,5 @@ void affiche() {
 	u8g2.drawStr(15, 20, txt[3]);
 	u8g2.drawStr(15, 20, txt[4]);
 	u8g2.drawStr(15, 20, txt[5]);
+	u8g2.sendBuffer();
 }
