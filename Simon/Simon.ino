@@ -117,11 +117,11 @@ void affiche_lumiere() {
 			voyant_lvl = 0;
 		}
 	} else {
-		if ((voyant_lvl % 2 == 0) && (millis() + old_time > 300)) {
+		if ((voyant_lvl % 2 == 0) && (millis() - old_time > 300)) {
 			digitalWrite(led_pin[stage_couleur[voyant_lvl / 2]], HIGH);
 			old_time = millis();
 			voyant_lvl ++;
-		} else if ((voyant_lvl % 2 == 1) && (millis() + old_time > 700)) {
+		} else if ((voyant_lvl % 2 == 1) && (millis() - old_time > 700)) {
 			digitalWrite(led_pin[stage_couleur[voyant_lvl / 2]], LOW);
 			old_time = millis();
 			voyant_lvl ++;
