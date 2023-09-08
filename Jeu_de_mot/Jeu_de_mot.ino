@@ -196,10 +196,34 @@ void intialisation() {
 	affiche();
 }
 
-
-u8g2.setFontDirection(1);
-u8g2.drawStr(15, 20, "Abc");
-//"OUI, PREMIER, VERRE, OK, MOTS, RIEN, '', VIDE, NON, MOT, MAUX, BOUGE, ROUGE, AU, EAU, ATTENDS, TES, T'ES, TON, TONS, THON, TU ES, HAUT, VERS, VERT, C'EST, C, VER"
+int BP_Appuye() { //fonction qui donne une valeur pour le BP appuyé
+    int nombre_appuye = 0;
+    kval = 0;
+    if (digitalRead(BP_1) == LOW) {
+        kval = 1;
+        nombre_appuye++;}
+    if (digitalRead(BP_2) == LOW) {
+        kval = 2;
+        nombre_appuye++;}
+    if (digitalRead(BP_3) == LOW) {
+        kval = 3;
+        nombre_appuye++;}
+    if (digitalRead(BP_4) == LOW) {
+        kval = 4;
+        nombre_appuye++;}
+    if (digitalRead(BP_5) == LOW) {
+        kval = 5;
+        nombre_appuye++;}
+    if (digitalRead(BP_6) == LOW) {
+        kval = 6;
+        nombre_appuye++;}
+    if (nombre_appuye > 1){ //si plusieurs BP sont appuyé, on renvoie 26 (erreur)
+        return 26;}
+        else if (kval_old == kval) { //si BP identique au précédent resultat, on renvois 0
+            return 0;}
+            else{kval_old = kval; // sinon on renvoie la valeur du BP appuyé
+                return kval;}
+}
 
 void affiche() {
 	u8g2.setFont(u8g2_font_ncenB14_tf);
