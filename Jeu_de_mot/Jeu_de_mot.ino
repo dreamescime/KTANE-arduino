@@ -46,6 +46,8 @@ Adafruit_NeoPixel stripRGB(PIXEL_COUNT_Led_RGB, PIXEL_PIN_Led_RGB, NEO_GRB + NEO
 #define BP_5          7
 #define BP_6          8
 
+#define Maximum_LVL   5
+
 uint8_t Recep[5];
 byte Numero_de_serie = 0;
 byte Nb_Batteries = 0;
@@ -75,6 +77,8 @@ void setup() {
 	Serial.begin(9600);
 	Serial.println("\n Module Jeu de Mot KTANE");
 	u8g2.begin();
+	initialisation();
+	NB_lvl = random(3, Maximum_LVL + 1);
 }
 
 void loop() {
@@ -255,4 +259,5 @@ void affiche() {
 	u8g2.drawStr(15, 20, txt[4]);
 	u8g2.drawStr(15, 20, txt[5]);
 	u8g2.sendBuffer();
+	old_time = millis();
 }
