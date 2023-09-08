@@ -59,10 +59,13 @@ byte mot_master = 0;
 byte mot[6];
 byte regard = 0;
 byte bouton_a_appuye = 0;
+byte bouton_appuye = 0;
+unsigned long old_time;
+byte lvl = 0;
+byte NB_lvl = 0;
 
 String txt_master = "";
 string txt[6];
-
 
 
 void setup() {
@@ -75,8 +78,24 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+	if (millis() - old_time > 1000) affiche();
+	if (Module_fini == 0) {
+		if (lvl < NB_lvl) {
+			bouton_appuye = BP_Appuye();
+			if (bouton_appuye == bouton_a_appuye) {
+				lvl ++;
+				initialisation();
+			}
+			else if (bouton_appuye == bouton_a_appuye) {
+				initialisation();
+				strike = 1;
+				while (strike == 1) {
+					delay(100);
+				}
+			}
+		}
+	}
+	if (Module_fini == 1) delay(1000);
 }
 
 void requestEvent() {
@@ -97,7 +116,7 @@ void receiveEvent(int howMany) {
   Indicateur = Recep[4];
 }
 
-void intialisation() {
+void initialisation() {
 	randomSeed(millis());
 	mot_master = random(1, 29);
 	if (mot_master == 21)
