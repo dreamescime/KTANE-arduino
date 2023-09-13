@@ -38,7 +38,7 @@
 * 35 Batterie 3
 
 **Information IIC Master>Slave**
-|valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |FRK              |
+|valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |Temps              |
 |:---------------:|:----------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
 |0                |                  |0                |                 |0                |SND              |000 = rien       |
 |1                |pair et voyelle   |1                |0 1.......DVID   |1                |CLR              |001 = 1          |
