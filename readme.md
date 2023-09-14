@@ -303,8 +303,7 @@
 
 * Led pour morse
 * [Afficheur 4 digit 7 segment (pas de IIC)](https://fr.aliexpress.com/item/1005004852285898.html?spm=a2g0o.cart.0.0.91ad378djBu8C8&mp=1&gatewayAdapt=glo2fra)
-* [potentiometre](https://fr.aliexpress.com/item/4000288962865.html?spm=a2g0o.productlist.main.77.6d5914f4v5NPLG&algo_pvid=d71fb403-f40d-4cc7-a875-13c06d929c08&algo_exp_id=d71fb403-f40d-4cc7-a875-13c06d929c08-38&pdp_npi=4%40dis%21EUR%211.01%210.86%21%21%211.07%21%21%40211b88f116927819246263528e020d%2110000001196337664%21sea%21FR%210%21A&curPageLogUid=roWasiHeoYNX)
-* 1 bouton
+* 3 bouton
 
 **Information à recevoir** :
 * NAN
@@ -313,18 +312,18 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	bouton
-*	4	
-*	5	
+*	3	bouton -
+*	4	bouton +
+*	5	bouton valid
 *	6	
 *	7	
 *	8	
-*	9	
+*	9
 *	10	
 *	11	
 *	12	
 *	13	
-*	A0	potentiometre
+*	A0  
 *	A1	
 *	A2	
 *	A3	
