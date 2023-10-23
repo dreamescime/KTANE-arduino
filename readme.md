@@ -1,6 +1,5 @@
 | Module Name         | Sketched         | Coded            | Made             |
 | ------------------- |:----------------:|:----------------:|:----------------:|
-| Memory              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 |Fils simple          |:heavy_check_mark:|                  |                  |
 |Bouton               |                  |                  |                  |
 |Symboles             |                  |                  |                  |
