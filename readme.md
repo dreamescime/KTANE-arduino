@@ -1,4 +1,4 @@
-| Module Name         | Sketched         | Coded            | Made             |
+| Module Name         | Sketched         | Codage           | Fait             |
 | ------------------- |:----------------:|:----------------:|:----------------:|
 |Fils simple          |:heavy_check_mark:|                  |                  |
 |Bouton               |                  |                  |                  |
