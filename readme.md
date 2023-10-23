@@ -53,10 +53,19 @@
 |10               |                  |10               |                 |10               |FRK              |                 |
 
 **Information IIC Slave>Master**
-|valeur           |Strike (erreur)   |Etat du module    |
-|:---------------:|:----------------:|:----------------:|
-|0                |pas d'erreur      |module arme       |
-|1                |une erreur        |module fini       |
+|valeur           |Strike (erreur)   |Etat du module    |Type du module    |
+|:---------------:|:----------------:|:----------------:|:----------------:|
+|0                |pas d'erreur      |module arme       |                  |
+|1                |une erreur        |module fini       |Fils simple       |
+|2                |                  |                  |Bouton            |
+|3                |                  |                  |Symboles          |
+|4                |                  |                  |SIMON             |
+|5                |                  |                  |Jeux de mots ?    |
+|6                |                  |                  |Memoire           |
+|7                |                  |                  |MORSE             |
+|8                |                  |                  |Fils compliqués   |
+|9                |                  |                  |Labyrinthe        |
+|10               |                  |                  |Mot de passe      |
 
 
 
