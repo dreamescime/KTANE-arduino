@@ -1,14 +1,14 @@
 | Module Name         | Sketched         | Codage           | Fait             |
 | ------------------- |:----------------:|:----------------:|:----------------:|
 |Fils simple          |:heavy_check_mark:|                  |                  |
-|Bouton               |                  |                  |                  |
-|Symboles             |                  |                  |                  |
-|SIMON                |                  |                  |                  |
-|Jeux de mots ?       |                  |                  |                  |
-|Memoire              |                  |                  |                  |
-|MORSE                |                  |                  |                  |
-|Fils compliqués      |                  |                  |                  |
-|Labyrinthe           |                  |                  |                  |
+|Bouton               |:heavy_check_mark:|                  |                  |
+|Symboles             |:heavy_check_mark:|                  |                  |
+|SIMON                |:heavy_check_mark:|                  |                  |
+|Jeux de mots ?       |:heavy_check_mark:|                  |                  |
+|Memoire              |:heavy_check_mark:|                  |                  |
+|MORSE                |:heavy_check_mark:|                  |                  |
+|Fils compliqués      |:heavy_check_mark:|                  |                  |
+|Labyrinthe           |:heavy_check_mark:|                  |                  |
 |Mot de passe         |                  |                  |                  |
 
 # 0 : Module Maitre
