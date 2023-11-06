@@ -286,7 +286,7 @@
 **Obligatoire** :
 * Led RGB avec support
 
-* Afficheur 7 segments a cabler
+* MAX7219 pour le chiffre du haut
 * [Afficheur 4 digit 7 segment (pas de IIC)](https://fr.aliexpress.com/item/1005004852285898.html?spm=a2g0o.cart.0.0.91ad378djBu8C8&mp=1&gatewayAdapt=glo2fra)
 * Bloc de led en rampe
 * 4 boutons
@@ -298,17 +298,17 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	Segment A
-*	4	Segment B
-*	5	Segment C
-*	6	Segment D
-*	7	Segment E
-*	8	Segment F
-*	9	Segment G
-*	10	Bouton 1
-*	11	Bouton 2
-*	12	Bouton 3
-*	13	Bouton 4
+*	3	Bouton 1
+*	4	Bouton 2
+*	5	Bouton 3
+*	6	Bouton 4
+*	7	DIO TM1637
+*	8	CLK TM1637
+*	9	
+*	10	CS Max7219
+*	11	DIN Max7219
+*	12	
+*	13	CLK Max7219
 *	A0	Led 1
 *	A1	Led 2
 *	A2	Led 3
