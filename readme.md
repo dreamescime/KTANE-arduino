@@ -10,7 +10,7 @@
 |MORSE                |:heavy_check_mark:|                  |                  |
 |Fils compliqués      |:heavy_check_mark:|                  |                  |
 |Labyrinthe           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-|Mot de passe         |                  |                  |                  |
+|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|                  |
 
 # 0 : Module Maitre
 
