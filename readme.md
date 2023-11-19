@@ -143,9 +143,9 @@
 * 0	RX
 * 1	TX
 * 2	Led RGB
-* 3	Bouton
-* 4	Anneau Led
-* 5	Bande LED
+* 3	Anneau Led
+* 4	Bande LED
+* 5	
 * 6	
 * 7	
 * 8	
@@ -155,7 +155,7 @@
 * 12	
 * 13	
 * A0	
-* A1	
+* A1	Bouton
 * A2	
 * A3	
 * A4	SDA
@@ -188,10 +188,10 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	bouton 1
-*	4	bouton 2
-*	5	bouton 3
-*	6	bouton 4
+*	3	
+*	4	
+*	5	
+*	6	
 *	7	
 *	8	reset ecran
 *	9	
@@ -199,10 +199,10 @@
 *	11	data ecran
 * 12	
 *	13	clock ecran
-*	A0	
-*	A1	
-*	A2	
-*	A3	
+*	A0	bouton 1
+*	A1	bouton 2
+*	A2	bouton 3
+*	A3	bouton 4
 *	A4	SDA
 *	A5	SCL
 *	A6	
@@ -224,21 +224,21 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	bouton 1
-*	4	bouton 2
-*	5	bouton 3
-*	6	bouton 4
-*	7	lumiere 1
-*	8	lumiere 2
-*	9	lumiere 3
-*	10	lumiere 4
+*	3	lumiere 1
+*	4	lumiere 2
+*	5	lumiere 3
+*	6	lumiere 4
+*	7	
+*	8	
+*	9	
+*	10	
 *	11	
 *	12	
 *	13	
-*	A0	
-*	A1	
-*	A2	
-*	A3	
+*	A0	bouton 1
+*	A1	bouton 2
+*	A2	bouton 3
+*	A3	bouton 4
 *	A4	SDA
 *	A5	SCL
 *	A6	
@@ -261,21 +261,21 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	bouton 1
-*	4	bouton 2
-*	5	bouton 3
-*	6	bouton 4
-*	7	bouton 5
-*	8	bouton 6
+*	3	
+*	4	
+*	5	bouton 5
+*	6	bouton 6
+*	7 
+*	8	reset ecran
 *	9	
-*	10	
-*	11	
+*	10	CS ecran
+*	11	data ecran
 * 12	
-*	13	
-*	A0	
-*	A1	
-*	A2	
-*	A3	
+*	13	clock ecran
+*	A0	bouton 1
+*	A1	bouton 2
+*	A2	bouton 3
+*	A3	bouton 4
 *	A4	SDA
 *	A5	SCL
 *	A6	
@@ -298,21 +298,21 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	Bouton 1
-*	4	Bouton 2
-*	5	Bouton 3
-*	6	Bouton 4
-*	7	DIO TM1637
-*	8	CLK TM1637
+*	3	DIO TM1637
+*	4	CLK TM1637
+*	5	
+*	6	
+*	7	Led niveau
+*	8	
 *	9	
 *	10	CS Max7219
 *	11	DIN Max7219
 *	12	
 *	13	CLK Max7219
-*	A0	Led 1
-*	A1	Led 2
-*	A2	Led 3
-*	A3	Led 4
+*	A0	Bouton 1
+*	A1	Bouton 2
+*	A2	Bouton 3
+*	A3	Bouton 4
 *	A4	SDA
 *	A5	SCL
 *	A6	
@@ -335,20 +335,20 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	bouton -
-*	4	bouton +
-*	5	bouton valid
+*	3	DIO TM1637
+*	4	CLK TM1637
+*	5	
 *	6	
-*	7	
+*	7	Led Morse
 *	8	
 *	9
 *	10	
 *	11	
 *	12	
 *	13	
-*	A0  
-*	A1	
-*	A2	
+*	A0  bouton +
+*	A1	bouton -
+*	A2	bouton valid
 *	A3	
 *	A4	SDA
 *	A5	SCL
@@ -416,10 +416,10 @@
 *	0	RX
 *	1	TX
 *	2	Led RGB
-*	3	Bouton Haut
-*	4	Bouton Bas
-*	5	Bouton Droit
-*	6	Bouton Gauche
+*	3	Led labyrinthe
+*	4	
+*	5	
+*	6	
 *	7	
 *	8	
 *	9	
@@ -427,10 +427,10 @@
 *	11	
 *	12	
 *	13	
-*	A0	
-*	A1	
-*	A2	
-*	A3	
+*	A0	Bouton Haut
+*	A1	Bouton Bas
+*	A2	Bouton Droit
+*	A3	Bouton Gauche
 *	A4	SDA
 *	A5	SCL
 *	A6	
@@ -458,16 +458,16 @@
 *	5	Bouton H3
 *	6	Bouton H4
 *	7	Bouton H5
-*	8	Bouton B1
-*	9	Bouton B2
-*	10	CS
-*	11	Data
-*	12	Bouton valide
-*	13	Clock
-*	A0	Bouton B3
-*	A1	Bouton B4
-*	A2	Bouton B5
-*	A3	
+*	8	reset ecran
+*	9	Bouton B1
+*	10	CS ecran
+*	11	data ecran
+* 12	Bouton valide
+*	13	clock ecran
+*	A0	Bouton B2
+*	A1	Bouton B3
+*	A2	Bouton B4
+*	A3	Bouton B5
 *	A4	SDA
 *	A5	SCL
 *	A6	
