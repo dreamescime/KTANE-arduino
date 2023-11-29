@@ -12,6 +12,12 @@
 |Labyrinthe           |:heavy_check_mark:|                  |                  |
 |Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|                  |
 
+| Module needle       | Sketched         | Codage           | Fait             |
+| ------------------- |:----------------:|:----------------:|:----------------:|
+|Gaz                  |                  |                  |                  |
+|Condensateur         |                  |                  |                  |
+|Molette              |:heavy_check_mark:|                  |                  |
+
 # 0 : Module Maitre
 
 **Obligatoire** :
