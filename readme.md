@@ -1,22 +1,22 @@
-| Module Name         | Sketched         | Codage           | Fait             |
-| ------------------- |:----------------:|:----------------:|:----------------:|
-|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Fils simple          |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Bouton               |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Symboles             |:heavy_check_mark:|:heavy_check_mark:|                  |
-|SIMON                |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Jeux de mots ?       |:heavy_check_mark:|                  |                  |
-|Memoire              |:heavy_check_mark:|:heavy_check_mark:|                  |
-|MORSE                |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Labyrinthe           |:heavy_check_mark:|                  |                  |
-|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|                  |
+| Module Name         | Sketched         | Codage           | Fait solo        | Fait ensemble    |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|
+|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|                  |                  |
+|Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|Jeux de mots ?       |:heavy_check_mark:|                  |                  |                  |
+|Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|Labyrinthe           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
 
-| Module needle       | Sketched         | Codage           | Fait             |
-| ------------------- |:----------------:|:----------------:|:----------------:|
-|Gaz                  |                  |                  |                  |
-|Condensateur         |                  |                  |                  |
-|Molette              |:heavy_check_mark:|                  |                  |
+| Module needle       | Sketched         | Codage           | Fait solo        | Fait ensemble    |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|
+|Gaz                  |                  |                  |                  |                  |
+|Condensateur         |                  |                  |                  |                  |
+|Molette              |:heavy_check_mark:|                  |                  |                  |
 
 # 0 : Module Maitre
 
