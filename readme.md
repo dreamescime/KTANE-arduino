@@ -2,7 +2,7 @@
 | ------------------- |:----------------:|:----------------:|:----------------:|
 |Master horloge       |:heavy_check_mark:|:heavy_check_mark:|                  |
 |Fils simple          |:heavy_check_mark:|:heavy_check_mark:|                  |
-|Bouton               |:heavy_check_mark:|                  |                  |
+|Bouton               |:heavy_check_mark:|:heavy_check_mark:|                  |
 |Symboles             |:heavy_check_mark:|:heavy_check_mark:|                  |
 |SIMON                |:heavy_check_mark:|:heavy_check_mark:|                  |
 |Jeux de mots ?       |:heavy_check_mark:|                  |                  |
