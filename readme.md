@@ -1,22 +1,22 @@
-| Module Name         | Sketched         | Codage           | Fait solo        | Fait ensemble    |
-| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|
-|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|                  |                  |
-|Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|Jeux de mots ?       |:heavy_check_mark:|                  |                  |                  |
-|Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|Labyrinthe           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
-|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |
+| Module Name         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
+|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|                  |                  | master = 0       |
+|Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |  1 - 10          |
+|Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 11 - 20          |
+|Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 21 - 30          |
+|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40          |
+|Jeux de mots ?       |:heavy_check_mark:|                  |                  |                  | 41 - 50          |
+|Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 51 - 60          |
+|MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 61 - 70          |
+|Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 71 - 80          |
+|Labyrinthe           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 81 - 90          |
+|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 91 - 100         |
 
-| Module needle       | Sketched         | Codage           | Fait solo        | Fait ensemble    |
-| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|
-|Gaz                  |                  |                  |                  |                  |
-|Condensateur         |                  |                  |                  |                  |
-|Molette              |:heavy_check_mark:|                  |                  |                  |
+| Module needle       | Sketched         | Codage           | Fait solo        | Fait ensemble    |                  |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
+|Gaz                  |                  |                  |                  |                  | 101 - 105        |
+|Condensateur         |                  |                  |                  |                  | 106 - 110        |
+|Molette              |:heavy_check_mark:|                  |                  |                  | 111 - 115        |
 
 # 0 : Module Maitre
 
