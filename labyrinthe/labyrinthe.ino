@@ -1,20 +1,22 @@
+#include "Wire.h"
 #include <FastLED.h>
 
 #define DATA_PIN_laby    3  // Digital IO pin connected to the NeoPixels
 #define NUM_LEDS_laby   64  // Number of NeoPixels (8 lignes de 8 points)
 #define LUMINOSITE_laby  10
 
-#define DATA_PIN_etat    4  // Digital IO pin connected to the NeoPixels
-#define NUM_LEDS_etat    5  // Number of NeoPixels (8 lignes de 8 points)
+#define DATA_PIN_etat    2  // Digital IO pin connected to the NeoPixels
+#define NUM_LEDS_etat    1  // Number of NeoPixels (8 lignes de 8 points)
 
-#define BP_HAUT          5
-#define BP_BAS           6
-#define BP_GAUCHE        7
-#define BP_DROITE        8
+#define BP_HAUT          A3
+#define BP_BAS           A1
+#define BP_GAUCHE        A0
+#define BP_DROITE        A2
 
 CRGB leds_laby[NUM_LEDS_laby];
 CRGB leds_etat[NUM_LEDS_etat];
 
+#define Num_Module 81
 
 const int labyrinthe_1[15] = {
 0b0000100000100010, // ligne 0
@@ -196,8 +198,21 @@ byte marqueur_S_X = 0;
 byte marqueur_S_Y = 0;
 byte pos_S = 0;
 
-byte NB_erreur = 0;
+int Recep[6];
+int Numero_de_serie = 0;
+int Nb_Batteries = 2;
+int Port = 0;
+int Nb_Erreur = 0;
+int Indicateur = 0;
+int Strike = 0;
+int Module_fini = 0;
+int Val_temps = 0;
+int Val_temps_1 = 0;
+int Val_temps_4 = 0;
+int Val_temps_5 = 0;
+int Demmarage = 0;
 
+byte NB_erreur = 0;
 byte bouton_appuye = 0;
 byte kval = 0;
 byte kval_old = 0;
@@ -208,8 +223,11 @@ byte j = 0;
 byte choix = 0;
 
 void setup() {
+  Wire.begin(Num_Module);                // join i2c bus with address ...
+  Wire.onReceive(onReceive);
+  Wire.onRequest(onRequest);
   Serial.begin(9600);
-    Serial.println("demarage ...");
+  Serial.println("\n Module Labyrinthe");
   pinMode(BP_HAUT, INPUT_PULLUP);
   pinMode(BP_BAS, INPUT_PULLUP);
   pinMode(BP_GAUCHE, INPUT_PULLUP);
@@ -220,39 +238,65 @@ void setup() {
   for(i = 0; i < 64; i++) {
     leds_laby[i].setRGB(0, 0, 0);
   }
+  leds_etat[0].setRGB(150, 150, 150);
   FastLED.show();
-
   i = 0;
   j = 0;
-  
-  while (bouton_appuye == 0) {
-    bouton_appuye = BP_Appuye();
-    delay(200);
-    if (i == 0) {
-      leds_laby[j].setRGB(200, 200, 200);
-      i = 1;
-    }
-    else {
-      leds_laby[j].setRGB(0, 0, 0);
-      i = 0;
-      j++;
-    }
-    if (j > 63)
-    j = 0;
-    FastLED.show();
-  }
-  
-  initialisation();
+  Serial.println("En attente du démarrage");
 }
 
 void loop() {
-  deplacement();
-  allume_led();
-  
-  
-  if ((pos_x == marqueur_S_X) && (pos_y == marqueur_S_Y)) {
-    reussite();
+  if (Demmarage == 0) {
+    while (Demmarage == 0) {
+      delay(250);
+      Serial.println(Demmarage);
+    }
+    delay(1000);
+    Serial.println("Demarrage");
+    randomSeed(millis());
+    initialisation();
   }
+  if(Module_fini == 0){
+    leds_etat[0].setRGB(0, 0, 100);
+    FastLED.show();
+    deplacement();
+    allume_led();
+    if ((pos_x == marqueur_S_X) && (pos_y == marqueur_S_Y)) {
+      Module_fini = 1;
+    }
+  }
+  if (Module_fini == 1) {
+    delay(100);
+    allume_led();
+    leds_etat[0].setRGB(255, 0, 0);
+    FastLED.show();
+  }
+}
+
+void onRequest() {
+  Wire.write(Strike);
+  Wire.write(Module_fini);
+  Strike = 0;
+}
+
+void onReceive(int len){
+  Serial.print("onReceive : ");
+  int i = 0;
+  while(Wire.available()){
+    int c = Wire.read();
+    Recep[i] = c;
+    Serial.print(c);
+    Serial.print(" ");
+    i++;
+  }
+  Serial.println();
+  Numero_de_serie = Recep[0];
+  Nb_Batteries = Recep[1];
+  Port = Recep[2];
+  Nb_Erreur = Recep[3];
+  Indicateur = Recep[4];
+  Val_temps = Recep[5];
+  if (Val_temps == 9) Demmarage = 1;
 }
 
 void initialisation() {
@@ -536,680 +580,21 @@ void allume_led () {
 }
 
 void erreur() {
-  NB_erreur ++;
-  for(i = 0; i < NB_erreur; i++) {
-    leds_etat[i].setRGB(255, 0, 0);
+  for(i = 0; i < 64; i++) {
+    leds_laby[i].setRGB(255, 0, 0);
   }
   FastLED.show();
-  if (NB_erreur == 1) {
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(255, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(0, 0, 0);
-    }
-    FastLED.show();
-    allume_led();
+  delay(250);
+  for(i = 0; i < 64; i++) {
+    leds_laby[i].setRGB(0, 0, 0);
   }
-  if (NB_erreur == 2) {
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(255, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(0, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(255, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(0, 0, 0);
-    }
-    FastLED.show();
-    allume_led();
-    
-  }
-  if (NB_erreur == 3) {
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(255, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(0, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(255, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(0, 0, 0);
-    }
-    FastLED.show();
-    delay(250);
-    for(i = 0; i < 64; i++) {
-      leds_laby[i].setRGB(255, 0, 0);
-    }
-    FastLED.show();
+  FastLED.show();
+  allume_led();
+  Strike = 1;
+  leds_etat[0].setRGB(255, 0, 0);
+  FastLED.show();
+  while (Strike == 1) {
     delay(1000);
-    initialisation();
+    Strike = 0;
   }
-}
-
-void reussite() {
-  delay(250);
-  for(i = 0; i < 64; i++) {
-    leds_laby[i].setRGB(0, 255, 0);
-  }
-  FastLED.show();
-  delay(250);
-  for(i = 0; i < 64; i++) {
-    leds_laby[i].setRGB(0, 0, 0);
-  }
-  allume_led();
-  delay(250);
-  for(i = 0; i < 64; i++) {
-    leds_laby[i].setRGB(0, 255, 0);
-  }
-  FastLED.show();
-  delay(250);
-  for(i = 0; i < 64; i++) {
-    leds_laby[i].setRGB(0, 0, 0);
-  }
-  allume_led();
-  delay(250);
-  for(i = 0; i < 64; i++) {
-    leds_laby[i].setRGB(0, 255, 0);
-  }
-  FastLED.show();
-  delay(250);
-  for(i = 0; i < 64; i++) {
-    leds_laby[i].setRGB(0, 0, 0);
-  }
-  FastLED.show();
-  num_labyrinthe ++;
-
-  if (num_labyrinthe < 9) {
-    choix_labyrinthe(code[num_labyrinthe]);
-
-    position_A_B_S();
-
-    allume_led();
-  }
-  else {
-    while (1) {
-      rainbow();
-	    texte_a_afficher(" 3657 ");
-    }
-  }
-}
-
-void rainbow() {
-  int r = 0;
-  int g = 0;
-  int b = 0;
-  long val_rgb = 0;
-
-  for(int i = 0; i < 256; i++) {
-    for(int j = 0; j < NUM_LEDS_laby; j++) {
-      val_rgb = (65536 * i / 256 + 65536 * j / NUM_LEDS_laby);
-      if (val_rgb > 65536) {
-        val_rgb = val_rgb - 65536;
-      }
-      if (val_rgb < 10923) {
-        r = 255;
-        g = map(val_rgb, 0, 10923, 0, 255);
-        b = 0;
-      }
-      else if (val_rgb < 21845) {
-        r = map(val_rgb, 10923, 21845, 255, 0);
-        g = 255;
-       b = 0;
-      }
-      else if (val_rgb < 32768) {
-        r = 0;
-        g = 255;
-        b = map(val_rgb, 21845, 32768, 0, 255);
-      }
-      else if (val_rgb < 43691) {
-        r = 0;
-        g = map(val_rgb, 32768, 43691, 255, 0);
-        b = 255;
-      }
-      else if (val_rgb < 54613) {
-        r = map(val_rgb, 43691, 54613, 0, 255);
-        g = 0;
-        b = 255;
-      }
-      else if (val_rgb < 65536) {
-        r = 255;
-        g = 0;
-        b = map(val_rgb, 32768, 43691, 255, 0);
-      }
-      leds_laby[j].setRGB(r, g, b);
-    }
-    FastLED.show();
-  Serial.println(val_rgb);
-    delay(30);
-  }
-}
-
-void texte_a_afficher(String texte) {
-	for (int i=0; i< texte.length(); i++) {
-		remplissageTableau(texte[i]);
-		affiche_led();
-		delay(1000);
-	}
-}
-
-void remplissageTableau(int val_lettre) {
-  switch (val_lettre) {
-  case 35: // love
-    grille[0]=B01000010;
-    grille[1]=B11100111;
-    grille[2]=B11111111;
-    grille[3]=B11111111;
-    grille[4]=B01111110;
-    grille[5]=B00111100;
-    grille[6]=B00011000;
-    grille[7]=B00000000;
-    break;
-	
-  case 32: // espace
-    grille[0]=B00000000;
-    grille[1]=B00000000;
-    grille[2]=B00000000;
-    grille[3]=B00000000;
-    grille[4]=B00000000;
-    grille[5]=B00000000;
-    grille[6]=B00000000;
-    grille[7]=B00000000;
-    break;
-	
-  case 36: // apostrophe
-    grille[0]=B00001000;
-    grille[1]=B00010000;
-    grille[2]=B00000000;
-    grille[3]=B00000000;
-    grille[4]=B00000000;
-    grille[5]=B00000000;
-    grille[6]=B00000000;
-    grille[7]=B00000000;
-    break;
-
-	
-  case 44: // virgule
-    grille[0]=B00000000;
-    grille[1]=B00000000;
-    grille[2]=B00000000;
-    grille[3]=B00000000;
-    grille[4]=B00000000;
-    grille[5]=B00000000;
-    grille[6]=B00001000;
-    grille[7]=B00010000;
-    break;
-
-  case 48: // 0
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01001100;
-    grille[4]=B01010100;
-    grille[5]=B01100100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-  
-  case 49: // 1
-    grille[0]=B00000000;
-    grille[1]=B00010000;
-    grille[2]=B00110000;
-    grille[3]=B00010000;
-    grille[4]=B00010000;
-    grille[5]=B00010000;
-    grille[6]=B00010000;
-    grille[7]=B00111000;
-    break;
-
-  case 50: // 2
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B00000100;
-    grille[4]=B00001000;
-    grille[5]=B00010000;
-    grille[6]=B00100000;
-    grille[7]=B01111100;
-    break;
-
-  case 51: // 3
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B00001000;
-    grille[3]=B00010000;
-    grille[4]=B00001000;
-    grille[5]=B00000100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 52: // 4
-    grille[0]=B00000000;
-    grille[1]=B00001000;
-    grille[2]=B00011000;
-    grille[3]=B00101000;
-    grille[4]=B01001000;
-    grille[5]=B01111100;
-    grille[6]=B00001000;
-    grille[7]=B00001000;
-    break;
-
-  case 53: // 5
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B01000000;
-    grille[3]=B01111000;
-    grille[4]=B00000100;
-    grille[5]=B00000100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 54: // 6
-    grille[0]=B00000000;
-    grille[1]=B00011000;
-    grille[2]=B00100000;
-    grille[3]=B01000000;
-    grille[4]=B01111000;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 55: // 7
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B00000100;
-    grille[3]=B00001000;
-    grille[4]=B00010000;
-    grille[5]=B00100000;
-    grille[6]=B01000000;
-    grille[7]=B01000000;
-    break;
-
-  case 56: // 8
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B00111000;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 57: // 9
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B00111100;
-    grille[5]=B00000100;
-    grille[6]=B00001000;
-    grille[7]=B00110000;
-    break;
-	
-  case 63: // ?
-    grille[0]=B00111000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B00001000;
-    grille[4]=B00010000;
-    grille[5]=B00010000;
-    grille[6]=B00000000;
-    grille[7]=B00010000;
-    break;
-
-  case 65:
-  case 97: // A
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01111100;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B01000100;
-    break;
-    
-  case 66:
-  case 98: // B
-    grille[0]=B00000000;
-    grille[1]=B01111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01111000;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B01111000;
-    break;
-    
-  case 67:
-  case 99: // C
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000000;
-    grille[4]=B01000000;
-    grille[5]=B01000000;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-    
-  case 68:
-  case 100: // D
-    grille[0]=B00000000;
-    grille[1]=B01111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01000100;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B01111000;
-    break;
-    
-  case 69:
-  case 101: // E
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B01000000;
-    grille[3]=B01000000;
-    grille[4]=B01111000;
-    grille[5]=B01000000;
-    grille[6]=B01000000;
-    grille[7]=B01111100;
-    break;
-    
-  case 70:
-  case 102: // F
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B01000000;
-    grille[3]=B01000000;
-    grille[4]=B01111000;
-    grille[5]=B01000000;
-    grille[6]=B01000000;
-    grille[7]=B01000000;
-    break;
-
-  case 71:
-  case 103: // G
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000000;
-    grille[4]=B01000000;
-    grille[5]=B01001100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 72:
-  case 104: // H
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01111100;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B01000100;
-    break;
-
-  case 73:
-  case 105: // I
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B00010000;
-    grille[3]=B00010000;
-    grille[4]=B00010000;
-    grille[5]=B00010000;
-    grille[6]=B00010000;
-    grille[7]=B00111000;
-    break;
-
-  case 74:
-  case 106: // J
-    grille[0]=B00000000;
-    grille[1]=B00011100;
-    grille[2]=B00001000;
-    grille[3]=B00001000;
-    grille[4]=B00001000;
-    grille[5]=B00001000;
-    grille[6]=B01001000;
-    grille[7]=B00110000;
-    break;
-
-  case 75:
-  case 107: // K
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01001000;
-    grille[3]=B01010000;
-    grille[4]=B01100000;
-    grille[5]=B01010000;
-    grille[6]=B01001000;
-    grille[7]=B01000100;
-    break;
-
-  case 76:
-  case 108: // L
-    grille[0]=B00000000;
-    grille[1]=B01000000;
-    grille[2]=B01000000;
-    grille[3]=B01000000;
-    grille[4]=B01000000;
-    grille[5]=B01000000;
-    grille[6]=B01000000;
-    grille[7]=B01111000;
-    break;
-
-  case 77:
-  case 109: // M
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01101100;
-    grille[3]=B01010100;
-    grille[4]=B01010100;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B01000100;
-    break;
-
-  case 78:
-  case 110: // N
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B01100100;
-    grille[4]=B01010100;
-    grille[5]=B01001100;
-    grille[6]=B01000100;
-    grille[7]=B01000100;
-    break;
-
-  case 79:
-  case 111: // O
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01000100;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 80:
-  case 112: // P
-    grille[0]=B00000000;
-    grille[1]=B01111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01111000;
-    grille[5]=B01000000;
-    grille[6]=B01000000;
-    grille[7]=B01000000;
-    break;
-
-  case 81:
-  case 113: // Q
-    grille[0]=B00000000;
-    grille[1]=B00111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01000100;
-    grille[5]=B01010100;
-    grille[6]=B01001000;
-    grille[7]=B00110100;
-    break;
-
-  case 82:
-  case 114: // R
-    grille[0]=B00000000;
-    grille[1]=B01111000;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01111000;
-    grille[5]=B01010000;
-    grille[6]=B01001000;
-    grille[7]=B01000100;
-    break;
-
-  case 83:
-  case 115: // S
-    grille[0]=B00000000;
-    grille[1]=B00111100;
-    grille[2]=B01000000;
-    grille[3]=B01000000;
-    grille[4]=B00111000;
-    grille[5]=B00000100;
-    grille[6]=B00000100;
-    grille[7]=B01111000;
-    break;
-
-  case 84:
-  case 116: // T
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B00010000;
-    grille[3]=B00010000;
-    grille[4]=B00010000;
-    grille[5]=B00010000;
-    grille[6]=B00010000;
-    grille[7]=B00010000;
-    break;
-
-  case 85:
-  case 117: // U
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01000100;
-    grille[5]=B01000100;
-    grille[6]=B01000100;
-    grille[7]=B00111000;
-    break;
-
-  case 86:
-  case 118: // V
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01000100;
-    grille[5]=B00101000;
-    grille[6]=B00101000;
-    grille[7]=B00010000;
-    break;
-
-  case 87:
-  case 119: // W
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B01000100;
-    grille[4]=B01010100;
-    grille[5]=B01010100;
-    grille[6]=B01010100;
-    grille[7]=B00101000;
-    break;
-
-  case 88:
-  case 120: // X
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B00101000;
-    grille[4]=B00010000;
-    grille[5]=B00101000;
-    grille[6]=B01000100;
-    grille[7]=B01000100;
-    break;
-
-  case 89:
-  case 121: // Y
-    grille[0]=B00000000;
-    grille[1]=B01000100;
-    grille[2]=B01000100;
-    grille[3]=B00101000;
-    grille[4]=B00010000;
-    grille[5]=B00010000;
-    grille[6]=B00010000;
-    grille[7]=B00010000;
-    break;
-
-  case 90:
-  case 122: // Z
-    grille[0]=B00000000;
-    grille[1]=B01111100;
-    grille[2]=B00000100;
-    grille[3]=B00001000;
-    grille[4]=B00010000;
-    grille[5]=B00100000;
-    grille[6]=B01000000;
-    grille[7]=B01111100;
-    break;
-  
-  default:
-	break;
-  }
-}
-
-void affiche_led() {
-	byte led = 0;
-    for(i = 0; i < 8; i++) {
-      for(j = 0; j < 8; j++) {
-        bool resultatBool = grille[i] & (1 << (7 - j));
-        if (resultatBool == 0) {
-			  leds_laby[led].setRGB(0, 0, 0);
-		}
-        if (resultatBool == 1) {
-			  leds_laby[led].setRGB(255, 255, 255);
-		}
-		led ++;
-      }
-    }
-  FastLED.show();
 }
