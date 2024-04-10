@@ -1,61 +1,67 @@
-const byte liste_mots[28][14] = {
-{ 6, 12,  7, 11,  9, 14, 10,  4,  1,  3,  2,  8,  5, 13},
-{ 9, 12,  6, 11,  3, 10,  5,  8, 13,  1,  4,  7, 14,  2},
-{ 4,  8, 13,  2,  7,  1, 10,  6,  5,  9, 14, 12,  3, 11},
-{13, 10, 12, 11,  4, 14,  1,  5,  3,  7,  9,  8,  6,  2},
-{ 8, 10, 12, 11,  6,  4,  3, 14,  9,  7, 13,  2,  5,  1},
-{12, 10,  8, 11,  2,  7, 14,  1,  5,  6,  9,  4,  3, 13},
-{ 8,  7,  9,  5,  1,  4, 11,  3, 12,  2, 13,  6, 14, 10},
-{ 1,  5,  9,  7, 12,  6, 10,  3, 14,  4,  8, 11, 13,  2},
-{10,  9,  2,  3, 11,  6,  4,  7,  8, 13, 14,  1, 12,  5},
-{ 6,  5,  1, 14,  3, 13,  7, 10, 11,  9,  8,  4, 12,  2},
-{ 4,  1, 12,  7,  5, 14,  3, 13,  9, 11, 10,  2,  8,  6},
-{11,  3,  2,  6,  8,  5, 13, 12,  9,  1,  4, 14,  7, 10},
-{ 8,  3,  4, 12,  6,  9,  2, 14,  7, 13,  5,  1, 10, 11},
-{10, 11,  6,  1, 14, 12,  5,  8,  4,  9,  2,  7,  3, 13},
-{27, 16, 17, 18, 25, 21, 19, 26, 23, 15, 22, 28, 24, 20},
-{17, 25, 28, 21, 23, 24, 22, 26, 15, 20, 18, 27, 19, 16},
-{22, 16, 21, 17, 25, 19, 27, 20, 18, 15, 23, 26, 28, 24},
-{15, 18, 19, 25, 22, 16, 20, 17, 23, 21, 27, 24, 28, 26},
-{24, 20, 19, 21, 23, 27, 17, 26, 18, 28, 25, 22, 16, 15},
-{21, 27, 25, 23, 18, 19, 22, 24, 20, 15, 28, 26, 16, 17},
-{21, 17, 16, 15, 24, 26, 22, 25, 27, 28, 18, 19, 20, 23},
-{19, 20, 16, 18, 25, 22, 24, 15, 21, 28, 17, 27, 26, 23},
-{15, 26, 18, 17, 20, 24, 22, 28, 16, 21, 19, 25, 23, 27},
-{27, 21, 25, 23, 17, 19, 18, 26, 28, 15, 20, 16, 22, 24},
-{23, 21, 22, 17, 26, 27, 25, 28, 24, 16, 19, 18, 20, 15},
-{16, 20, 24, 22, 15, 19, 27, 23, 18, 25, 26, 21, 17, 28},
-{16, 24, 28, 18, 15, 26, 21, 19, 27, 20, 23, 25, 17, 22},
-{18, 25, 20, 19, 26, 24, 22, 23, 21, 15, 28, 27, 16, 17}
-}
-
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
 #include <U8g2lib.h>
 
-#define Num_Module 14
+const byte liste_mots[28][14] = {
+{ 5, 11,  6, 10,  8, 13,  9,  3,  0,  2,  1,  7,  4, 12},//0  PRÊT
+{ 8, 11,  5, 10,  2,  9,  4,  7, 12,  0,  3,  6, 13,  1},//1  PREMIER
+{ 3,  7, 12,  1,  6,  0,  9,  5,  4,  8, 13, 11,  2, 10},//2  NON
+{12,  9, 11, 10,  3, 13,  0,  4,  2,  6,  8,  7,  5,  1},//3  VIDE
+{ 7,  9, 11, 10,  5,  3,  2, 13,  8,  6, 12,  1,  4,  0},//4  RIEN
+{11,  9,  7, 10,  1,  6, 13,  0,  4,  5,  8,  3,  2, 12},//5  OUI
+{ 7,  6,  8,  4,  0,  3, 10,  2, 11,  1, 12,  5, 13,  9},//6  EUX
+{ 0,  4,  8,  6, 11,  5,  9,  2, 13,  3,  7, 10, 12,  1},//7  EUHHH
+{ 9,  8,  1,  2, 10,  5,  3,  6,  7, 12, 13,  0, 11,  4},//8  GAUCHE
+{ 5,  4,  0, 13,  2, 12,  6,  9, 10,  8,  7,  3, 11,  1},//9  DROITE
+{ 3,  0, 11,  6,  4, 13,  2, 12,  8, 10,  9,  1,  7,  5},//10 MILIEU
+{10,  2,  1,  5,  7,  4, 12, 11,  8,  0,  3, 13,  6,  9},//11 E
+{ 7,  2,  3, 11,  5,  8,  1, 13,  6, 12,  4,  0,  9, 10},//12 ATTENDS
+{ 9, 10,  5,  0, 13, 11,  4,  7,  3,  8,  1,  6,  2, 12},//13 APPUIE
+{26, 15, 16, 17, 24, 20, 18, 25, 22, 14, 21, 27, 23, 19},//14 TOI
+{16, 24, 27, 20, 22, 23, 21, 25, 14, 19, 17, 26, 18, 15},//15 THON
+{21, 15, 20, 16, 24, 18, 26, 19, 17, 14, 22, 25, 27, 23},//16 TON
+{14, 17, 18, 24, 21, 15, 19, 16, 22, 20, 26, 23, 27, 25},//17 TONS
+{23, 19, 18, 20, 22, 26, 16, 25, 17, 27, 24, 21, 15, 14},//18 T'ES
+{20, 26, 24, 22, 17, 18, 21, 23, 19, 14, 27, 25, 15, 16},//19 TES
+{20, 16, 15, 14, 23, 25, 21, 24, 26, 27, 17, 18, 19, 22},//20 AVANT
+{18, 19, 15, 17, 24, 21, 23, 14, 20, 27, 16, 26, 25, 22},//21 QUOI
+{14, 25, 17, 16, 19, 23, 21, 27, 15, 20, 18, 24, 22, 26},//22 QUOI ?
+{26, 20, 24, 22, 16, 18, 17, 25, 27, 14, 19, 15, 21, 23},//23 FAIT
+{22, 20, 21, 16, 25, 26, 24, 27, 23, 15, 18, 17, 19, 14},//24 SUIVANT
+{15, 19, 23, 21, 14, 18, 26, 22, 17, 24, 25, 20, 16, 27},//25 MAINTIENS
+{15, 23, 27, 17, 14, 25, 20, 18, 26, 19, 22, 24, 16, 21},//26 OK
+{17, 24, 19, 18, 25, 23, 21, 22, 20, 14, 27, 26, 15, 16} //27 COMME
+};
+
+#define Num_Module 41
 
 #define PIXEL_PIN_Led_RGB         2
 #define PIXEL_COUNT_Led_RGB       1
 Adafruit_NeoPixel stripRGB(PIXEL_COUNT_Led_RGB, PIXEL_PIN_Led_RGB, NEO_GRB + NEO_KHZ800);
+U8G2_ST7920_128X64_1_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 8);
 
-#define BP_1          3
-#define BP_2          4
-#define BP_3          5
-#define BP_4          6
-#define BP_5          7
-#define BP_6          8
+#define BP_1          A0
+#define BP_2          A3
+#define BP_3          A1
+#define BP_4          5
+#define BP_5          A2
+#define BP_6          4
 
 #define Maximum_LVL   5
 
-uint8_t Recep[5];
-byte Numero_de_serie = 0;
-byte Nb_Batteries = 0;
-byte Port = 0;
-byte Nb_Erreur = 0;
-byte Indicateur = 0;
-uint8_t Strike = 0;
-uint8_t Module_fini = 0;
+int Recep[6];
+int Numero_de_serie = 0;
+int Nb_Batteries = 2;
+int Port = 0;
+int Nb_Erreur = 0;
+int Indicateur = 0;
+int Strike = 0;
+int Module_fini = 0;
+int Val_temps = 0;
+int Val_temps_1 = 0;
+int Val_temps_4 = 0;
+int Val_temps_5 = 0;
+int Demmarage = 0;
 
 byte mot_master = 0;
 byte mot[6];
@@ -66,162 +72,182 @@ unsigned long old_time;
 byte lvl = 0;
 byte NB_lvl = 0;
 
-String txt_master = "";
-string txt[6];
+String txt_master;
+String txt0;
+String txt1;
+String txt2;
+String txt3;
+String txt4;
+String txt5;
 
+byte kval_old = 0;
+byte mot_a_appuye = 0;
+byte mot_a_regarder = 0;
 
 void setup() {
-	Wire.begin(Num_Module);                // join i2c bus with address ...
-	Wire.onRequest(requestEvent); // register event
-	Wire.onReceive(receiveEvent); // register event
-	Serial.begin(9600);
-	Serial.println("\n Module Jeu de Mot KTANE");
-	u8g2.begin();
-	initialisation();
-	NB_lvl = random(3, Maximum_LVL + 1);
+  stripRGB.begin();
+  stripRGB.setPixelColor(0,   150,   150, 150);
+  stripRGB.show();
+  pinMode(BP_1, INPUT_PULLUP);
+  pinMode(BP_2, INPUT_PULLUP);
+  pinMode(BP_3, INPUT_PULLUP);
+  pinMode(BP_4, INPUT_PULLUP);
+  pinMode(BP_5, INPUT_PULLUP);
+  pinMode(BP_6, INPUT_PULLUP);
+  Wire.begin(Num_Module);                // join i2c bus with address ...
+  Wire.onReceive(onReceive);
+  Wire.onRequest(onRequest);
+  u8g2.begin();
+  Serial.begin(9600);
+  Serial.println("\n Module Jeu de Mot KTANE");
+  Serial.println("En attente du démarrage");
 }
 
 void loop() {
-	if (millis() - old_time > 1000) affiche();
-	if (Module_fini == 0) {
-		if (lvl < NB_lvl) {
-			bouton_appuye = BP_Appuye();
-			if (bouton_appuye == bouton_a_appuye) {
-				lvl ++;
-				initialisation();
-			}
-			else if (bouton_appuye == bouton_a_appuye) {
-				initialisation();
-				strike = 1;
-				while (strike == 1) {
-					delay(100);
-				}
-			}
-		}
-	}
-	if (Module_fini == 1) delay(1000);
+  if (Demmarage == 0) {
+    while (Demmarage == 0) {
+      delay(250);
+      Serial.println(Demmarage);
+    }
+    delay(1000);
+    randomSeed(millis());
+    initialisation();
+    NB_lvl = random(3, Maximum_LVL + 1);
+  }
+  if (Module_fini == 0) {
+    stripRGB.setPixelColor(0, 0, 0, 100);             //  Set pixel's color (in RAM)
+    stripRGB.show(); 
+    if (lvl < NB_lvl) {
+      bouton_appuye = BP_Appuye();
+      if (bouton_appuye == bouton_a_appuye) {
+        lvl ++;
+        initialisation();
+      }
+      else if (bouton_appuye != bouton_a_appuye && bouton_appuye != 0) {
+        initialisation();
+        Strike = 1;
+        lvl = 0;
+        while (Strike == 1) {
+          delay(600);
+          Strike = 0;
+        }
+      }
+    }
+    if (lvl >= NB_lvl) Module_fini = 1;
+  }
+  if (Module_fini == 1) {
+    delay(100);
+    stripRGB.setPixelColor(0, 255, 0, 0);             //  Set pixel's color (in RAM)
+    stripRGB.show(); 
+  }
 }
 
-void requestEvent() {
+void onRequest() {
   Wire.write(Strike);
   Wire.write(Module_fini);
   Strike = 0;
 }
 
-void receiveEvent(int howMany) {
-  for (int i = 0; i = 5; i++) {
+void onReceive(int len){
+  Serial.print("onReceive : ");
+  int i = 0;
+  while(Wire.available()){
     int c = Wire.read();
     Recep[i] = c;
+    Serial.print(c);
+    Serial.print(" ");
+    i++;
   }
+  Serial.println();
   Numero_de_serie = Recep[0];
   Nb_Batteries = Recep[1];
   Port = Recep[2];
   Nb_Erreur = Recep[3];
   Indicateur = Recep[4];
+  Val_temps = Recep[5];
+  if (Val_temps >= 4) Val_temps_5 = 1;
+  else Val_temps_5 = 0;
+  if ((Val_temps - 4 * Val_temps_5) >= 2) Val_temps_4 = 1;
+  else Val_temps_4 = 0;
+  if ((Val_temps - 4 * Val_temps_5 - 2 * Val_temps_4) >= 1) Val_temps_1 = 1;
+  else Val_temps_1 = 0;
+  if (Val_temps == 9) Demmarage = 1;
 }
 
 void initialisation() {
-	randomSeed(millis());
-	mot_master = random(1, 29);
-	if (mot_master == 21)
-		regard = 0;
-	if (mot_master ==  2 || mot_master ==  4 || mot_master == 27)
-		regard = 1;
-	if (mot_master ==  1 || mot_master ==  6 || mot_master == 10 || mot_master == 25)
-		regard = 2;
-	if (mot_master ==  8 || mot_master == 12 || mot_master == 13 || mot_master == 17 || mot_master == 19 || mot_master == 20 || mot_master == 24)
-		regard = 3;
-	if (mot_master ==  7 || mot_master == 14 || mot_master == 15 || mot_master == 23)
-		regard = 4;
-	if (mot_master ==  3 || mot_master ==  5 || mot_master ==  9 || mot_master == 11 || mot_master == 16 || mot_master == 18 || mot_master == 22 || mot_master == 26 || mot_master == 28)
-		regard = 5;
-	
-	mot[0] = random(0, 28);
-	mot[1] = random(0, 28);
-	mot[2] = random(0, 28);
-	mot[3] = random(0, 28);
-	mot[4] = random(0, 14);
-	mot[5] = random(14, 28);
-	for (int h = 0; h < 500; h++) { //mellange la premiere ligne
-		int i = random(0, 6); 
-		int j = random(0, 6);
-		int swap = mot[i];
-		mot[i] = mot[j];
-		mot[j] = swap;}
-	
-	byte bouton_a_appuye = 0;
-	for (i = 0; i < 14; i++) {
-		for (j = 0; j < 6; j++) {
-			if ((mot[j] == liste_mots[mot[regard]][i]) && (bouton_a_appuye == 0)) bouton_a_appuye = j+1;
-		}
-	}
+  randomSeed(millis());
+  mot_master = random(1, 29);
+  if (mot_master == 21)
+    regard = 0;
+  if (mot_master ==  2 || mot_master ==  4 || mot_master == 27)
+    regard = 1;
+  if (mot_master ==  1 || mot_master ==  6 || mot_master == 10 || mot_master == 25)
+    regard = 2;
+  if (mot_master ==  8 || mot_master == 12 || mot_master == 13 || mot_master == 17 || mot_master == 19 || mot_master == 20 || mot_master == 24)
+    regard = 3;
+  if (mot_master ==  7 || mot_master == 14 || mot_master == 15 || mot_master == 23)
+    regard = 4;
+  if (mot_master ==  3 || mot_master ==  5 || mot_master ==  9 || mot_master == 11 || mot_master == 16 || mot_master == 18 || mot_master == 22 || mot_master == 26 || mot_master == 28)
+    regard = 5;
+  
+  int Mot_ok = 0;
+  int Mauvais_choix = 0;
+  while(Mot_ok == 0) {
+    mot[0] = random(0, 28);
+    mot[1] = random(0, 28);
+    mot[2] = random(0, 28);
+    mot[3] = random(0, 28);
+    mot[4] = random(0, 14);
+    mot[5] = random(14, 28);
+    for(int i = 1; i <6; i++) {
+      if(mot[0] == mot[i]) Mauvais_choix++;
+    }
+    for(int i = 2; i <6; i++) {
+      if(mot[1] == mot[i]) Mauvais_choix++;
+    }
+    for(int i = 3; i <6; i++) {
+      if(mot[2] == mot[i]) Mauvais_choix++;
+    }
+    for(int i = 4; i <6; i++) {
+      if(mot[3] == mot[i]) Mauvais_choix++;
+    }
+    if(mot[4] == mot[5]) Mauvais_choix++;
+    if(Mauvais_choix == 0) {
+      Mot_ok = 1;
+    }
+    Mauvais_choix = 0;
+  }
+  for (int h = 0; h < 500; h++) { //mellange la premiere ligne
+    byte i = random(0, 6); 
+    byte j = random(0, 6);
+    byte swap = mot[i];
+    mot[i] = mot[j];
+    mot[j] = swap;}
+  
+  mot_a_appuye = 100;
+  for (byte i = 0; i < 14; i++) {
+    for (byte j = 0; j < 6; j++) {
+      if ((mot[j] == liste_mots[mot[regard]][i]) && (mot_a_appuye == 100)) {
+        mot_a_appuye = liste_mots[mot[regard]][i];
+        mot_a_regarder = j;
+      }
+    }
+  }
+  Serial.print("Mot a regarder : ");
+  Serial.print(mot_a_regarder + 1);
+  bouton_a_appuye = 0;
+  for (byte i = 0; i < 6; i++) {
+    if (mot[i] == mot_a_appuye && bouton_a_appuye == 0) bouton_a_appuye = i+1;
+  }
 
-	if (mot_master ==  1) txt_master = "OUI";
-	if (mot_master ==  2) txt_master = "PREMIER";
-	if (mot_master ==  3) txt_master = "VERRE";
-	if (mot_master ==  4) txt_master = "OK";
-	if (mot_master ==  5) txt_master = "MOTS";
-	if (mot_master ==  6) txt_master = "RIEN";
-	if (mot_master ==  7) txt_master = "";
-	if (mot_master ==  8) txt_master = "VIDE";
-	if (mot_master ==  9) txt_master = "NON";
-	if (mot_master == 10) txt_master = "MOT";
-	if (mot_master == 11) txt_master = "MAUX";
-	if (mot_master == 12) txt_master = "BOUGE";
-	if (mot_master == 13) txt_master = "ROUGE";
-	if (mot_master == 14) txt_master = "AU";
-	if (mot_master == 15) txt_master = "EAU";
-	if (mot_master == 16) txt_master = "ATTENDS";
-	if (mot_master == 17) txt_master = "TES";
-	if (mot_master == 18) txt_master = "T'ES";
-	if (mot_master == 19) txt_master = "TON";
-	if (mot_master == 20) txt_master = "TONS";
-	if (mot_master == 21) txt_master = "THON";
-	if (mot_master == 22) txt_master = "TU ES";
-	if (mot_master == 23) txt_master = "HAUT";
-	if (mot_master == 24) txt_master = "VERS";
-	if (mot_master == 25) txt_master = "VERT";
-	if (mot_master == 26) txt_master = "C'EST";
-	if (mot_master == 27) txt_master = "C";
-	if (mot_master == 28) txt_master = "VER";
-
-	for (i = 0; i < 6; i++) {
-			if (mot[i] ==  1) txt[i] = "PRÊT";
-			if (mot[i] ==  2) txt[i] = "PREMIER";
-			if (mot[i] ==  3) txt[i] = "NON";
-			if (mot[i] ==  4) txt[i] = "VIDE";
-			if (mot[i] ==  5) txt[i] = "RIEN";
-			if (mot[i] ==  6) txt[i] = "OUI";
-			if (mot[i] ==  7) txt[i] = "EUX";
-			if (mot[i] ==  8) txt[i] = "EUHHH";
-			if (mot[i] ==  9) txt[i] = "GAUCHE";
-			if (mot[i] == 10) txt[i] = "DROITE";
-			if (mot[i] == 11) txt[i] = "MILIEU";
-			if (mot[i] == 12) txt[i] = "E";
-			if (mot[i] == 13) txt[i] = "ATTENDS";
-			if (mot[i] == 14) txt[i] = "APPUIE";
-			if (mot[i] == 15) txt[i] = "TOI";
-			if (mot[i] == 16) txt[i] = "THON";
-			if (mot[i] == 17) txt[i] = "TON";
-			if (mot[i] == 18) txt[i] = "TONS";
-			if (mot[i] == 19) txt[i] = "T'ES";
-			if (mot[i] == 20) txt[i] = "TES";
-			if (mot[i] == 21) txt[i] = "AVANT";
-			if (mot[i] == 22) txt[i] = "QUOI";
-			if (mot[i] == 23) txt[i] = "QUOI ?";
-			if (mot[i] == 24) txt[i] = "FAIT";
-			if (mot[i] == 25) txt[i] = "SUIVANT";
-			if (mot[i] == 26) txt[i] = "MAINTIENS";
-			if (mot[i] == 27) txt[i] = "OK";
-			if (mot[i] == 28) txt[i] = "COMME";
-	}
-
-	affiche();
+  Serial.print("Mot a appuyer : ");
+  Serial.print(bouton_a_appuye);
+  affiche();
 }
 
-int BP_Appuye() { //fonction qui donne une valeur pour le BP appuyé
-    int nombre_appuye = 0;
-    kval = 0;
+byte BP_Appuye() { //fonction qui donne une valeur pour le BP appuyé
+    byte nombre_appuye = 0;
+    byte kval = 0;
     if (digitalRead(BP_1) == LOW) {
         kval = 1;
         nombre_appuye++;}
@@ -249,15 +275,90 @@ int BP_Appuye() { //fonction qui donne une valeur pour le BP appuyé
 }
 
 void affiche() {
-	u8g2.setFont(u8g2_font_ncenB14_tf);
-	u8g2.setFontDirection(1);
-	u8g2.drawStr(15, 20, txt_master);
-	u8g2.drawStr(15, 20, txt[0]);
-	u8g2.drawStr(15, 20, txt[1]);
-	u8g2.drawStr(15, 20, txt[2]);
-	u8g2.drawStr(15, 20, txt[3]);
-	u8g2.drawStr(15, 20, txt[4]);
-	u8g2.drawStr(15, 20, txt[5]);
-	u8g2.sendBuffer();
-	old_time = millis();
+  u8g2.clearDisplay();
+  delay(1000);
+  u8g2.firstPage();
+  do {
+    u8g2.setFontDirection(1);
+    u8g2.drawLine(105,  0, 105,  63);
+    u8g2.drawLine( 35,  0,  35,  63);
+    u8g2.drawLine( 70,  0,  70,  63);
+    u8g2.drawLine(  0, 32, 105,  32);
+    int val = 60 / NB_lvl;
+    if (lvl > 0) u8g2.drawLine(  127, 0 * val, 127,  1 * val);
+    if (lvl > 1) u8g2.drawLine(  127, 1 * val, 127,  2 * val);
+    if (lvl > 2) u8g2.drawLine(  127, 2 * val, 127,  3 * val);
+    if (lvl > 3) u8g2.drawLine(  127, 3 * val, 127,  4 * val);
+    if (lvl > 4) u8g2.drawLine(  127, 4 * val, 127,  5 * val);
+    u8g2.setFont(u8g2_font_ncenB08_tf);  // change ref pos to vertical center of the font
+    u8g2.setFontPosCenter();
+    int x = 112;
+    int y = 5;
+    if (mot_master-1 ==  0) u8g2.drawStr(x, y+15, "OUI");//0
+    if (mot_master-1 ==  1) u8g2.drawStr(x, y+ 0, "PREMIER");//1
+    if (mot_master-1 ==  2) u8g2.drawStr(x, y+ 8, "VERRE");//2
+    if (mot_master-1 ==  3) u8g2.drawStr(x, y+19, "OK");//3
+    if (mot_master-1 ==  4) u8g2.drawStr(x, y+13, "MOTS");//4
+    if (mot_master-1 ==  5) u8g2.drawStr(x, y+13, "RIEN");//5
+    if (mot_master-1 ==  6) u8g2.drawStr(x, y, "");//6
+    if (mot_master-1 ==  7) u8g2.drawStr(x, y+13, "VIDE");//7
+    if (mot_master-1 ==  8) u8g2.drawStr(x, y+15, "NON");//8
+    if (mot_master-1 ==  9) u8g2.drawStr(x, y+13, "MOT");//9
+    if (mot_master-1 == 10) u8g2.drawStr(x, y+ 9, "MAUX");//10
+    if (mot_master-1 == 11) u8g2.drawStr(x, y+ 7, "BOUGE");//11
+    if (mot_master-1 == 12) u8g2.drawStr(x, y+ 6, "ROUGE");//12
+    if (mot_master-1 == 13) u8g2.drawStr(x, y+19, "AU");//13
+    if (mot_master-1 == 14) u8g2.drawStr(x, y+16, "EAU");//14
+    if (mot_master-1 == 15) u8g2.drawStr(x, y+ 0, "ATTENDS");//15
+    if (mot_master-1 == 16) u8g2.drawStr(x, y+17, "TES");//16
+    if (mot_master-1 == 17) u8g2.drawStr(x, y+15, "T'ES");//17
+    if (mot_master-1 == 18) u8g2.drawStr(x, y+17, "TON");//18
+    if (mot_master-1 == 19) u8g2.drawStr(x, y+13, "TONS");//19
+    if (mot_master-1 == 20) u8g2.drawStr(x, y+12, "THON");//20
+    if (mot_master-1 == 21) u8g2.drawStr(x, y+11, "TU ES");//21
+    if (mot_master-1 == 22) u8g2.drawStr(x, y+10, "HAUT");//21
+    if (mot_master-1 == 23) u8g2.drawStr(x, y+11, "VERS");//23
+    if (mot_master-1 == 24) u8g2.drawStr(x, y+11, "VERT");//24
+    if (mot_master-1 == 25) u8g2.drawStr(x, y+11, "C'EST");//25
+    if (mot_master-1 == 26) u8g2.drawStr(x, y+23, "C");//26
+    if (mot_master-1 == 27) u8g2.drawStr(x, y+16, "VER");//27
+    u8g2.setFont(u8g2_font_4x6_tf);
+    for (int i = 0; i < 6; i++) {
+      if (i == 0) {x = 85; y =  2;}
+      if (i == 1) {x = 85; y = 35;}
+      if (i == 2) {x = 50; y =  2;}
+      if (i == 3) {x = 50; y = 35;}
+      if (i == 4) {x = 15; y =  2;}
+      if (i == 5) {x = 15; y = 35;}
+      if (mot[i] ==  0) u8g2.drawStr(x, y+ 6, "PRET");//0
+      if (mot[i] ==  1) u8g2.drawStr(x, y+ 0, "PREMIER");//1
+      if (mot[i] ==  2) u8g2.drawStr(x, y+ 8, "NON");//2
+      if (mot[i] ==  3) u8g2.drawStr(x, y+ 6, "VIDE");//3
+      if (mot[i] ==  4) u8g2.drawStr(x, y+ 6, "RIEN");//4
+      if (mot[i] ==  5) u8g2.drawStr(x, y+ 8, "OUI");//5
+      if (mot[i] ==  6) u8g2.drawStr(x, y+ 8, "EUX");//6
+      if (mot[i] ==  7) u8g2.drawStr(x, y+ 4, "EUHHH");//7
+      if (mot[i] ==  8) u8g2.drawStr(x, y+ 2, "GAUCHE");//8
+      if (mot[i] ==  9) u8g2.drawStr(x, y+ 2, "DROITE");//9
+      if (mot[i] == 10) u8g2.drawStr(x, y+ 2, "MILIEU");//10
+      if (mot[i] == 11) u8g2.drawStr(x, y+13, "E");//11
+      if (mot[i] == 12) u8g2.drawStr(x, y+ 0, "ATTENDS");//12
+      if (mot[i] == 13) u8g2.drawStr(x, y+ 2, "APPUIE");//13
+      if (mot[i] == 14) u8g2.drawStr(x, y+ 8, "TOI");//14
+      if (mot[i] == 15) u8g2.drawStr(x, y+ 6, "THON");//15
+      if (mot[i] == 16) u8g2.drawStr(x, y+ 8, "TON");//16
+      if (mot[i] == 17) u8g2.drawStr(x, y+ 6, "TONS");//17
+      if (mot[i] == 18) u8g2.drawStr(x, y+ 6, "T'ES");//18
+      if (mot[i] == 19) u8g2.drawStr(x, y+ 8, "TES");//19
+      if (mot[i] == 20) u8g2.drawStr(x, y+ 2, "AVANT");//20
+      if (mot[i] == 21) u8g2.drawStr(x, y+ 6, "QUOI");//21
+      if (mot[i] == 22) u8g2.drawStr(x, y+ 2, "QUOI ?");//22
+      if (mot[i] == 23) u8g2.drawStr(x, y+ 6, "FAIT");//23
+      if (mot[i] == 24) u8g2.drawStr(x, y+ 0, "SUIVANT");//24
+      if (mot[i] == 25) u8g2.drawStr(x, y+ 4, "TIENT");//25
+      if (mot[i] == 26) u8g2.drawStr(x, y+10, "OK");//26
+      if (mot[i] == 27) u8g2.drawStr(x, y+ 4, "COMME");//27
+    }
+  } while ( u8g2.nextPage() );
+  old_time = millis();
 }
