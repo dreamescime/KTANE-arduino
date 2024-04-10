@@ -1,6 +1,6 @@
 | Module Name         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|                  |                  | master = 0       |
+|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | master = 0       |
 |Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |  1 - 10          |
 |Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 11 - 20          |
 |Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 21 - 30          |
