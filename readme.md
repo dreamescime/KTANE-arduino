@@ -5,7 +5,7 @@
 |Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 11 - 20          |
 |Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 21 - 30          |
 |SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40       (36 est interdit)|
-|Jeux de mots ?       |:heavy_check_mark:|                  |                  |                  | 41 - 50          |
+|Jeux de mots ?       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 41 - 50          |
 |Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 51 - 60          |
 |MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 61 - 70          |
 |Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 71 - 80          |
@@ -61,13 +61,13 @@
 |valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |Temps              |
 |:---------------:|:----------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
 |0                |                  |0                |                 |0                |SND              |000 = rien       |
-|1                |pair et voyelle   |1                |0 1.......DVID   |1                |CLR              |001 = 1          |
-|2                |impair et voyelle |2                |0 2..Parallele   |2                |CAR              |010 = 4          |
-|3                |pair et /voyelle  |3                |1 0........PS2   |3                |IND              |011 = 4 & 1      |
+|1                |pair et voyelle   |1                |0 1.......HDMI   |1                |CLR              |001 = 1          |
+|2                |impair et voyelle |2                |0 2......USB C   |2                |CAR              |010 = 4          |
+|3                |pair et /voyelle  |3                |1 0........USB   |3                |IND              |011 = 4 & 1      |
 |4                |impair et /voyelle|4                |1 1.......RJ45   |4                |FRQ              |100 = 5          |
-|5                |                  |5                |1 2......Serie   |5                |SIG              |101 = 5 & 1      |
-|6                |                  |6                |2 0.Stereo RCA   |6                |NSA              |110 = 5 & 4      |
-|7                |                  |7                |2 1........USB   |7                |MSA              |111 = 5 & 4 & 1  |
+|5                |                  |5                |1 2.......PS/2   |5                |SIG              |101 = 5 & 1      |
+|6                |                  |6                |2 0...Mono RCA   |6                |NSA              |110 = 5 & 4      |
+|7                |                  |7                |2 1.......Jack   |7                |MSA              |111 = 5 & 4 & 1  |
 |8                |                  |8                |                 |8                |TRN              |                 |
 |9                |                  |9                |                 |9                |BOB              |                 |
 |10               |                  |10               |                 |10               |FRK              |                 |
