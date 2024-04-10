@@ -4,7 +4,7 @@
 |Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |  1 - 10          |
 |Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 11 - 20          |
 |Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 21 - 30          |
-|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40       36 est interdit|
+|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40       (36 est interdit)|
 |Jeux de mots ?       |:heavy_check_mark:|                  |                  |                  | 41 - 50          |
 |Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 51 - 60          |
 |MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 61 - 70          |
