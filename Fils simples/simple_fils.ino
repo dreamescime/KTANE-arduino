@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <Wire.h>
 
-#define Num_Module 57
+#define Num_Module 1
 
 #define PIXEL_PIN_Led_RGB         2
 #define PIXEL_COUNT_Led_RGB       1
@@ -13,52 +13,171 @@ Adafruit_NeoPixel stripRGB(PIXEL_COUNT_Led_RGB, PIXEL_PIN_Led_RGB, NEO_GRB + NEO
 #define Rouge    4
 #define Noir     5
 
-uint8_t Recep[6];
-byte Numero_de_serie = 0;
-byte Nb_Batteries = 0;
-byte Port = 0;
-byte Nb_Erreur = 0;
-byte Indicateur = 0;
-uint8_t Strike = 0;
-uint8_t Module_fini = 0;
+int Recep[6];
+int Numero_de_serie = 0;
+int Nb_Batteries = 2;
+int Port = 0;
+int Nb_Erreur = 0;
+int Indicateur = 0;
+int Strike = 0;
+int Module_fini = 0;
+int Val_temps = 0;
+int Val_temps_1 = 0;
+int Val_temps_4 = 0;
+int Val_temps_5 = 0;
+int Demmarage = 0;
 
-const byte borne[6] = {0, 1, 2, 3, 6, 7};
+const byte borne[6] = {7, 6, 3, 2, 1, 0};
 byte Fil_present[6];
 byte Nb_couleur[6];
 byte Nb_fil = 0;
 byte Fil_a_couper = 0;
 byte Fil_a_couper_index = 0;
+byte Solution_cree = 0;
 
 void setup() {
-	Serial.begin(9600);
-	stripRGB.begin();
-	stripRGB.show();
+  Wire.begin(Num_Module);                // join i2c bus with address ...
+  Wire.onReceive(onReceive);
+  Wire.onRequest(onRequest);
+  Serial.begin(9600);
+  Serial.println("\n Module fil simple");
+  stripRGB.begin();
+  stripRGB.setPixelColor(0, 150, 150, 150);         //  Set pixel's color (in RAM)
+  stripRGB.show();
 
-	pinMode(A0, INPUT);
-	pinMode(A1, INPUT);
-	pinMode(A2, INPUT);
-	pinMode(A3, INPUT);
-	pinMode(A6, INPUT);
-	pinMode(A7, INPUT);
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
+  pinMode(A2, INPUT);
+  pinMode(A3, INPUT);
+  pinMode(A6, INPUT);
+  pinMode(A7, INPUT);
 
-	Wire.begin(Num_Module);                // join i2c bus with address ...
-	Wire.onRequest(requestEvent); // register event
-	Wire.onReceive(receiveEvent); // register event
+  Serial.println("En attente du démarrage");
+}
 
-	delay(10);
+void loop() {
+  if (Demmarage == 0) {
+    while (Demmarage == 0) {
+      delay(250);
+      Serial.println(Demmarage);
+    }
+    delay(4000);
+    randomSeed(millis());
+    for(int i = 0; i < 6; i++) {
+      Fil_present[i] = tension_sur_fil(analogRead(borne[i]));
+      Nb_couleur[Fil_present[i]] = Nb_couleur[Fil_present[i]] + 1;
+      if (Fil_present[i] != 0)
+        Nb_fil++;
+    }
+    Serial.print("Il y a ");
+    Serial.println(Nb_fil);
+    for(int i = 0; i < 6; i++) {
+      if (Fil_present[i] == 0) Serial.println("Pas de fil");
+      if (Fil_present[i] == 1) Serial.println("Fil Blanc");
+      if (Fil_present[i] == 2) Serial.println("Fil Bleu");
+      if (Fil_present[i] == 3) Serial.println("Fil Orange");
+      if (Fil_present[i] == 4) Serial.println("Fil Rouge");
+      if (Fil_present[i] == 5) Serial.println("Fil Noir");
+    }
+    delay(10);
 
-	for(int i = 0; i < 6; i++) {
-		Fil_present[i] = tension_sur_fil(analogRead(borne[i]));
-		Nb_couleur[Fil_present[i]] = Nb_couleur[Fil_present[i]] + 1;
-		if (Fil_present[i] != 0)
-			Nb_fil++;
-	}
+  }
+  if(Module_fini == 0){
+    stripRGB.setPixelColor(0, 0, 0, 100);             //  Set pixel's color (in RAM)
+    stripRGB.show();  
+    for(int i = 0; i < 6; i++) {
+      if(Fil_present[i] != 0){
+        if(Fil_present[i] != tension_sur_fil(analogRead(borne[i]))) {
+          delay(100);
+          if (Solution_cree == 0) solution();
+          if(Fil_present[i] != tension_sur_fil(analogRead(borne[i]))) { // Check again for debouncing reasons
+            if(i == Fil_a_couper_index) {
+              Module_fini = 1;
+            } else {
+              Strike = 1;
+              Fil_present[i] = tension_sur_fil(analogRead(borne[i]));
+              while (Strike == 1) {
+                delay(600);
+                Strike = 0;
+              }
+            }
+          }
+        }
+        delay(10);
+      }
+    }
+  }
+  if (Module_fini == 1) {
+    delay(100);
+    stripRGB.setPixelColor(0, 255, 0, 0);             //  Set pixel's color (in RAM)
+    stripRGB.show(); 
+  }
+}
 
-	delay(10);
+void onRequest() {
+  Wire.write(Strike);
+  Wire.write(Module_fini);
+  Strike = 0;
+}
 
+void onReceive(int len){
+  Serial.print("onReceive : ");
+  int i = 0;
+  while(Wire.available()){
+    int c = Wire.read();
+    Recep[i] = c;
+    Serial.print(c);
+    Serial.print(" ");
+    i++;
+  }
+  Serial.println();
+  Numero_de_serie = Recep[0];
+  Nb_Batteries = Recep[1];
+  Port = Recep[2];
+  Nb_Erreur = Recep[3];
+  Indicateur = Recep[4];
+  Val_temps = Recep[5];
+  if (Val_temps == 9) {
+    Demmarage = 1;}
+}
+
+int tension_sur_fil(int tension) {
+  if(tension < 10) {          return 0; // pas de fils
+  } else if(tension < 138) {  return 1; // Blanc
+  } else if(tension < 384) {  return 2; // Bleu
+  } else if(tension < 640) {  return 3; // Jaune
+  } else if(tension < 896) {  return 4; // Rouge
+  } else {                    return 5; // Noir
+  }
+  return 0;
+}
+
+int dernier_fil() {
+  for(int i = 5; i >= 0; i++) {
+    if(Fil_present[i] != 0){
+      return i;
+    }
+  }
+  return 0;
+}
+
+int Dernier_fil_de_couleur(int color) {
+  int index = 0;
+  int retIndex = 0;
+  for(int i = 0; i < 6; i++) {
+    if(Fil_present[i] != 0){
+      if(Fil_present[i] == color){
+        retIndex = index;
+      }
+      index++;
+    }
+  }
+  return retIndex;
+}
+
+void solution() {
   // Detect Solution:
   switch(Nb_fil) {
-
     case(3):
       if(Nb_couleur[Rouge] == 0){
         Fil_a_couper = 2; // Second wire
@@ -86,7 +205,7 @@ void setup() {
       break;
 
     case(5):
-      if(Fil_present[dernier_fil()] == (Numero_de_serie == 2 || Numero_de_serie == 4)) {
+      if(Fil_present[dernier_fil()] == Noir && (Numero_de_serie == 2 || Numero_de_serie == 4)) {
         Fil_a_couper = 4; // Fourth wire
       } else if(Nb_couleur[Rouge] == 1 && Nb_couleur[Jaune] > 1) {
         Fil_a_couper = 1; // First wire
@@ -112,88 +231,17 @@ void setup() {
     default:
       Strike = 1;
   }
+  Serial.print("le fil a couper est : ");
+  Serial.println(Fil_a_couper);
     int temp = Fil_a_couper;
-	for(int i = 0; i < 6; i++) {
-		if(Fil_present[i] != 0){
-			temp--;
-			if(temp == 0){
-				Fil_a_couper_index = i;
-				break;
-			}
-		}
-	}
-}
-
-void loop() {
-	if(Module_fini == 0){
-		for(int i = 0; i < 6; i++) {
-			if(Fil_present[i] != 0){
-				if(Fil_present[i] != tension_sur_fil(analogRead(borne[i]))) {
-					delay(100);
-					if(Fil_present[i] != tension_sur_fil(analogRead(borne[i]))) { // Check again for debouncing reasons
-						if(i == Fil_a_couper_index) {
-							Module_fini = 1;
-						} else {
-							Strike = 1;
-							Fil_present[i] = tension_sur_fil(analogRead(borne[i]));
-						}
-					}
-				}
-				delay(10);
-			}
-		}
-	}
-}
-
-void requestEvent() {
-  Wire.write(Strike);
-  Wire.write(Module_fini);
-  Strike = 0;
-}
-
-void receiveEvent(int howMany) {
-  for (int i = 0; i = 6; i++) {
-    int c = Wire.read();
-    Recep[i] = c;
-  }
-  Numero_de_serie = Recep[0];
-  Nb_Batteries = Recep[1];
-  Port = Recep[2];
-  Nb_Erreur = Recep[3];
-  Indicateur = Recep[4];
-}
-
-int tension_sur_fil(int tension) {
-	if(tension < 10) {          return 0; // pas de fils
-	} else if(tension < 138) {  return 1; // Blanc
-	} else if(tension < 384) {  return 2; // Bleu
-	} else if(tension < 640) {  return 3; // Jaune
-	} else if(tension < 896) {  return 4; // Rouge
-	} else {                    return 5; // Noir
-	}
-	return 0;
-}
-
-int dernier_fil() {
-  for(int i = 5; i >= 0; i++) {
-    if(Fil_present[i] != 0){
-      return i;
-    }
-  }
-  return 0;
-}
-
-int Dernier_fil_de_couleur(int color) {
-  int index = 0;
-  int retIndex = 0;
   for(int i = 0; i < 6; i++) {
     if(Fil_present[i] != 0){
-      if(Fil_present[i] == color){
-        retIndex = index;
+      temp--;
+      if(temp == 0){
+        Fil_a_couper_index = i;
+        Solution_cree = 1;
+        break;
       }
-      index++;
     }
   }
-  return retIndex;
 }
-
