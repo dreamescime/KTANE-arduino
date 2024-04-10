@@ -34,28 +34,28 @@
 // ESP8266  BUSY -> 4, RST -> 16, DC -> 17, CS -> SS(5), CLK -> SCK(18), DIN -> MOSI(23)
 
 * 1	 TX
-* 2	 /
+* 2	 Led RGB x2
 * 3	 RX
 * 4	 Busy eInk
 * 5	 CS   eInk
-* 12 CLK
-* 13 DIO
-* 14 Led RGB
-* 15 
+* 12 DIN Max7219 x4
+* 13 CLK Max7219 x4
+* 14 BP Diminue
+* 15 CS  Max7219 x4
 * 16 RST eInk
 * 17 DC  eInk
 * 18 CLK eInk
-* 19 
+* 19 /
 * 21 SDA
 * 22 SCL
 * 23 DIN eInk
-* 25 Port 1
-* 26 Port 2
-* 27 Led Erreurs
-* 32 Batterie 2
+* 25 Son Victoire
+* 26 Son Erreur
+* 27 BP Augmente
+* 32 Son Victoire
 * 33 Batterie 1
-* 34 Batterie 4
-* 35 Batterie 3
+* 34 BP START
+* 35 /
 
 **Information IIC Master>Slave**
 |valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |Temps              |
@@ -69,23 +69,23 @@
 |6                |                  |6                |2 0...Mono RCA   |6                |NSA              |110 = 5 & 4      |
 |7                |                  |7                |2 1.......Jack   |7                |MSA              |111 = 5 & 4 & 1  |
 |8                |                  |8                |                 |8                |TRN              |                 |
-|9                |                  |9                |                 |9                |BOB              |                 |
+|9                |                  |9                |                 |9                |BOB              | START           |
 |10               |                  |10               |                 |10               |FRK              |                 |
 
 **Information IIC Slave>Master**
-|valeur           |Strike (erreur)   |Etat du module    |Type du module    |
-|:---------------:|:----------------:|:----------------:|:----------------:|
-|0                |pas d'erreur      |module arme       |                  |
-|1                |une erreur        |module fini       |Fils simple       |
-|2                |                  |                  |Bouton            |
-|3                |                  |                  |Symboles          |
-|4                |                  |                  |SIMON             |
-|5                |                  |                  |Jeux de mots ?    |
-|6                |                  |                  |Memoire           |
-|7                |                  |                  |MORSE             |
-|8                |                  |                  |Fils compliqués   |
-|9                |                  |                  |Labyrinthe        |
-|10               |                  |                  |Mot de passe      |
+|valeur           |Strike (erreur)   |Etat du module    |
+|:---------------:|:----------------:|:----------------:|
+|0                |pas d'erreur      |module arme       |
+|1                |une erreur        |module fini       |
+|2                |                  |                  |
+|3                |                  |                  |
+|4                |                  |                  |
+|5                |                  |                  |
+|6                |                  |                  |
+|7                |                  |                  |
+|8                |                  |                  |
+|9                |                  |                  |
+|10               |                  |                  |
 
 
 
