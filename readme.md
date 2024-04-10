@@ -61,13 +61,13 @@
 |valeur           |numero de série   |Batterie         |Port             |nombre erreur    |indicateur       |Temps              |
 |:---------------:|:----------------:|:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
 |0                |                  |0                |                 |0                |SND              |000 = rien       |
-|1                |pair et voyelle   |1                |0 1.......HDMI   |1                |CLR              |001 = 1          |
-|2                |impair et voyelle |2                |0 2......USB C   |2                |CAR              |010 = 4          |
-|3                |pair et /voyelle  |3                |1 0........USB   |3                |IND              |011 = 4 & 1      |
-|4                |impair et /voyelle|4                |1 1.......RJ45   |4                |FRQ              |100 = 5          |
-|5                |                  |5                |1 2.......PS/2   |5                |SIG              |101 = 5 & 1      |
-|6                |                  |6                |2 0...Mono RCA   |6                |NSA              |110 = 5 & 4      |
-|7                |                  |7                |2 1.......Jack   |7                |MSA              |111 = 5 & 4 & 1  |
+|1                |pair et voyelle   |1                |          HDMI   |1                |CLR              |001 = 1          |
+|2                |impair et voyelle |2                |         USB C   |2                |CAR              |010 = 4          |
+|3                |pair et /voyelle  |3                |           USB   |3                |IND              |011 = 4 & 1      |
+|4                |impair et /voyelle|4                |          RJ45   |4                |FRQ              |100 = 5          |
+|5                |                  |5                |          PS/2   |5                |SIG              |101 = 5 & 1      |
+|6                |                  |6                |      Mono RCA   |6                |NSA              |110 = 5 & 4      |
+|7                |                  |7                |          Jack   |7                |MSA              |111 = 5 & 4 & 1  |
 |8                |                  |8                |                 |8                |TRN              |                 |
 |9                |                  |9                |                 |9                |BOB              | START           |
 |10               |                  |10               |                 |10               |FRK              |                 |
