@@ -4,7 +4,7 @@
 |Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |  1 - 10          |
 |Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 11 - 20          |
 |Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 21 - 30          |
-|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40       (36 est interdit)|
+|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40          |
 |Jeux de mots ?       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 41 - 50          |
 |Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 51 - 60          |
 |MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 61 - 70          |
@@ -17,6 +17,7 @@
 |Gaz                  |                  |                  |                  |                  | 101 - 105        |
 |Condensateur         |                  |                  |                  |                  | 106 - 110        |
 |Molette              |:heavy_check_mark:|                  |                  |                  | 111 - 115        |
+|Port                 |:heavy_check_mark:|                  |                  |                  | 116 - 120        |
 
 # 0 : Module Maitre
 
