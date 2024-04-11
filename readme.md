@@ -74,19 +74,19 @@
 |10               |                  |10               |                 |10               |FRK              |                 |
 
 **Information IIC Slave>Master**
-|valeur           |Strike (erreur)   |Etat du module    |
-|:---------------:|:----------------:|:----------------:|
-|0                |pas d'erreur      |module arme       |
-|1                |une erreur        |module fini       |
-|2                |                  |                  |
-|3                |                  |                  |
-|4                |                  |                  |
-|5                |                  |                  |
-|6                |                  |                  |
-|7                |                  |                  |
-|8                |                  |                  |
-|9                |                  |                  |
-|10               |                  |                  |
+|valeur           |Strike (erreur)   |Etat du module    |Port connecté    |
+|:---------------:|:----------------:|:----------------:|:---------------:|
+|0                |pas d'erreur      |module arme       | Aucun           |
+|1                |une erreur        |module fini       | HDMI            |
+|2                |                  |                  | USB C           |
+|3                |                  |                  | USB             |
+|4                |                  |                  | RJ45            |
+|5                |                  |                  | PS/2            |
+|6                |                  |                  | Mono RCA        |
+|7                |                  |                  | Jack            |
+|8                |                  |                  |                 |
+|9                |                  |                  |                 |
+|10               |                  |                  |                 |
 
 
 
