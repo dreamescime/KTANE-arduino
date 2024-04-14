@@ -14,14 +14,20 @@
 
 | Module modé         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Questions Reponses   |                  |                  |                  |                  | 51 - 55          |
-|Math emoji           |                  |                  |                  |                  | 56 - 60          |
+|Math emoji           |                  |                  |                  |                  | 51 - 55          |
 
 | Module needle       | Sketched         | Codage           | Fait solo        | Fait ensemble    |                  |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Gaz                  |                  |                  |                  |                  | 101 - 105        |
-|Condensateur         |                  |                  |                  |                  | 106 - 110        |
-|Molette              |:heavy_check_mark:|                  |                  |                  | 111 - 115        |
+|Gaz                  |                  |                  |                  |                  |  91 -  95        |
+|Condensateur         |                  |                  |                  |                  |  96 - 100        |
+|Molette              |:heavy_check_mark:|                  |                  |                  | 101 - 105        |
+
+| Module modé         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
+|Questions Reponses   |                  |                  |                  |                  | 106 - 110        |
+
+| Module PORT         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
 |Port                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 116 - 120        |
 
 # 0 : Module Maitre
