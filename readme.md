@@ -1,23 +1,28 @@
 | Module Name         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | master = 0       |
-|Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |  1 - 10          |
-|Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 11 - 20          |
-|Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 21 - 30          |
-|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 31 - 40          |
-|Jeux de mots ?       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 41 - 50          |
-|Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 51 - 60          |
-|MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 61 - 70          |
-|Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 71 - 80          |
-|Labyrinthe           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 81 - 90          |
-|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 91 - 100         |
+|Master horloge       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| master = 0       |
+|Fils simple          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|  1 -  5          |
+|Bouton               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|  6 - 10          |
+|Symboles             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 11 - 15          |
+|SIMON                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 16 - 20          |
+|Jeux de mots ?       |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 21 - 25          |
+|Memoire              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 26 - 30          |
+|MORSE                |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 31 - 35          |
+|Fils compliqués      |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 36 - 40          |
+|Labyrinthe           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 41 - 45          |
+|Mot de passe         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 46 - 50          |
+
+| Module modé         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
+| ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
+|Questions Reponses   |                  |                  |                  |                  | 51 - 55          |
+|Math emoji           |                  |                  |                  |                  | 56 - 60          |
 
 | Module needle       | Sketched         | Codage           | Fait solo        | Fait ensemble    |                  |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
 |Gaz                  |                  |                  |                  |                  | 101 - 105        |
 |Condensateur         |                  |                  |                  |                  | 106 - 110        |
 |Molette              |:heavy_check_mark:|                  |                  |                  | 111 - 115        |
-|Port                 |:heavy_check_mark:|                  |                  |                  | 116 - 120        |
+|Port                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 116 - 120        |
 
 # 0 : Module Maitre
 
