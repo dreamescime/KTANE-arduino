@@ -24,7 +24,7 @@
 
 | Module modé         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Questions Reponses   |                  |                  |                  |                  | 106 - 110        |
+|Questions Reponses   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:| 106 - 110        |
 
 | Module PORT         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
