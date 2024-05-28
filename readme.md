@@ -14,7 +14,7 @@
 
 | Module modé         | Sketched         | Codage           | Fait solo        | Fait ensemble    | N° adresse       |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Math emoji           |                  |                  |                  |                  | 51 - 55          |
+|Math emoji           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  | 51 - 55          |
 
 | Module needle       | Sketched         | Codage           | Fait solo        | Fait ensemble    |                  |
 | ------------------- |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
